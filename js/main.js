@@ -316,6 +316,41 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
 
   let maxX = 10, maxY = 6, maxZ = 5;
 
+  // наклон телефона -> направление гравитации вбок; тряска -> импульс-разброс
+  const grav = { x: 0 };
+  let shake = false;
+  let lastShake = 0;
+
+  function handleOrientation(e) {
+    const gamma = e.gamma || 0;                       // лево-право, градусы
+    const target = Math.max(-1, Math.min(1, gamma / 35));
+    grav.x += (target - grav.x) * 0.12;               // сглаживание
+  }
+  function handleMotion(e) {
+    const a = e.acceleration || e.accelerationIncludingGravity;
+    if (!a) return;
+    const mag = Math.abs(a.x || 0) + Math.abs(a.y || 0) + Math.abs(a.z || 0);
+    const now = performance.now();
+    if (mag > 26 && now - lastShake > 450) { lastShake = now; shake = true; }
+  }
+  function enableTilt() {
+    const DOE = window.DeviceOrientationEvent;
+    if (!DOE) return;
+    if (typeof DOE.requestPermission === "function") {
+      // iOS 13+: разрешение можно запросить только по жесту пользователя
+      DOE.requestPermission().then((s) => {
+        if (s === "granted") {
+          window.addEventListener("deviceorientation", handleOrientation);
+          window.addEventListener("devicemotion", handleMotion);
+        }
+      }).catch(() => {});
+    } else {
+      window.addEventListener("deviceorientation", handleOrientation);
+      window.addEventListener("devicemotion", handleMotion);
+    }
+  }
+  if (isTouch) window.addEventListener("pointerdown", enableTilt, { once: true });
+
   const posData = new Float32Array(COUNT * 3);
   const velData = new Float32Array(COUNT * 3);
   const sizeData = new Float32Array(COUNT);
@@ -393,8 +428,13 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
       vTmp.set(posData[b], posData[b + 1], posData[b + 2]);
       const vel = new THREE.Vector3(velData[b], velData[b + 1], velData[b + 2]);
       vel.y -= delta * cfg.gravity * sizeData[i];
+      vel.x += delta * cfg.gravity * sizeData[i] * grav.x;   // наклон телефона -> катятся вбок
+      if (shake) {
+        vel.x += (Math.random() - 0.5) * cfg.maxVelocity * 6;
+        vel.y += (Math.random() - 0.5) * cfg.maxVelocity * 6;
+      }
       vel.multiplyScalar(cfg.friction);
-      vel.clampLength(0, cfg.maxVelocity);
+      vel.clampLength(0, shake ? cfg.maxVelocity * 5 : cfg.maxVelocity);
       vTmp.add(vel);
 
       for (let j = 0; j < COUNT; j++) {
@@ -431,6 +471,7 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
       posData[b] = vTmp.x; posData[b + 1] = vTmp.y; posData[b + 2] = vTmp.z;
       velData[b] = vel.x; velData[b + 1] = vel.y; velData[b + 2] = vel.z;
     }
+    shake = false;
   }
 
   const clock = new THREE.Clock();
@@ -500,23 +541,30 @@ updateRoad();
 
 /* ---------- 3D tilt + spotlight on cards ---------- */
 
-if (!reduceMotion && !isTouch) {
+if (!reduceMotion) {
   document.querySelectorAll(".stop-card, .work-card").forEach((card) => {
-    card.addEventListener("pointermove", (e) => {
+    const move = (e) => {
       const r = card.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width;
       const py = (e.clientY - r.top) / r.height;
       card.style.setProperty("--mx", px * 100 + "%");
       card.style.setProperty("--my", py * 100 + "%");
-      const rx = (0.5 - py) * 6;
-      const ry = (px - 0.5) * 6;
-      card.style.transform = "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-2px)";
-      card.style.transition = "transform 0.06s linear";
-    });
-    card.addEventListener("pointerleave", () => {
+      // 3D-наклон — только для мыши; на touch он мешал бы скроллу, оставляем подсветку
+      if (!isTouch) {
+        const rx = (0.5 - py) * 6;
+        const ry = (px - 0.5) * 6;
+        card.style.transform = "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-2px)";
+        card.style.transition = "transform 0.06s linear";
+      }
+    };
+    const reset = () => {
+      if (isTouch) return;
       card.style.transition = "transform 0.4s ease";
       card.style.transform = "";
-    });
+    };
+    card.addEventListener("pointermove", move, { passive: true });
+    card.addEventListener("pointerleave", reset);
+    card.addEventListener("pointercancel", reset);
   });
 }
 
@@ -529,13 +577,13 @@ document.querySelectorAll(".freveal").forEach((t, i) => {
   t.style.transitionDelay = 0.1 + i * 0.1 + "s";
 });
 
-if (!reduceMotion && !isTouch) {
+if (!reduceMotion) {
   document.querySelectorAll(".footer-shell, .configurator").forEach((zone) => {
     zone.addEventListener("pointermove", (e) => {
       const r = zone.getBoundingClientRect();
       zone.style.setProperty("--fx", ((e.clientX - r.left) / r.width) * 100 + "%");
       zone.style.setProperty("--fy", ((e.clientY - r.top) / r.height) * 100 + "%");
-    });
+    }, { passive: true });
   });
 }
 
