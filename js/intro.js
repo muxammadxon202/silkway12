@@ -3,10 +3,9 @@
   if (!overlay) return;
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let seen = false;
-  try { seen = localStorage.getItem("silkway_intro_v2") === "1"; } catch (e) {}
 
-  if (reduce || seen) {
+  // интро проигрывается при каждой загрузке; уважаем только reduced-motion
+  if (reduce) {
     overlay.remove();
     return;
   }
@@ -140,7 +139,6 @@
   function finish() {
     if (done) return;
     done = true;
-    try { localStorage.setItem("silkway_intro_v2", "1"); } catch (e) {}
     overlay.classList.add("intro-out");
     document.documentElement.classList.remove("intro-lock");
     setTimeout(() => overlay.remove(), 700);
