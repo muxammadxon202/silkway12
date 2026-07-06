@@ -316,40 +316,41 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
 
   let maxX = 10, maxY = 6, maxZ = 5;
 
-  // наклон телефона -> направление гравитации вбок; тряска -> импульс-разброс
+  // движение телефона управляет шарами: наклон -> катятся вбок, тряска -> дрожат
   const grav = { x: 0 };
-  let shake = false;
-  let lastShake = 0;
+  let shakeEnergy = 0;              // затухающая «энергия тряски»
 
-  function handleOrientation(e) {
-    const gamma = e.gamma || 0;                       // лево-право, градусы
-    const target = Math.max(-1, Math.min(1, gamma / 35));
-    grav.x += (target - grav.x) * 0.12;               // сглаживание
-  }
   function handleMotion(e) {
-    const a = e.acceleration || e.accelerationIncludingGravity;
-    if (!a) return;
-    const mag = Math.abs(a.x || 0) + Math.abs(a.y || 0) + Math.abs(a.z || 0);
-    const now = performance.now();
-    if (mag > 26 && now - lastShake > 450) { lastShake = now; shake = true; }
+    // наклон: компонента гравитации по X. Работает и без deviceorientation.
+    const g = e.accelerationIncludingGravity;
+    if (g && g.x != null) {
+      const target = Math.max(-1.5, Math.min(1.5, -g.x / 4));
+      grav.x += (target - grav.x) * 0.12;
+    }
+    // тряска: «чистое» ускорение (без гравитации) копит энергию
+    const a = e.acceleration;
+    if (a && a.x != null) {
+      const mag = Math.abs(a.x) + Math.abs(a.y || 0) + Math.abs(a.z || 0);
+      if (mag > 6) shakeEnergy = Math.min(1.2, shakeEnergy + mag / 25);
+    }
   }
   function enableTilt() {
-    const DOE = window.DeviceOrientationEvent;
-    if (!DOE) return;
-    if (typeof DOE.requestPermission === "function") {
-      // iOS 13+: разрешение можно запросить только по жесту пользователя
-      DOE.requestPermission().then((s) => {
-        if (s === "granted") {
-          window.addEventListener("deviceorientation", handleOrientation);
-          window.addEventListener("devicemotion", handleMotion);
-        }
-      }).catch(() => {});
+    const DME = window.DeviceMotionEvent;
+    if (!DME) return;
+    if (typeof DME.requestPermission === "function") {
+      // iOS 13+: разрешение на датчики можно запросить только по жесту пользователя
+      DME.requestPermission()
+        .then((s) => { if (s === "granted") window.addEventListener("devicemotion", handleMotion); })
+        .catch(() => {});
     } else {
-      window.addEventListener("deviceorientation", handleOrientation);
       window.addEventListener("devicemotion", handleMotion);
     }
   }
-  if (isTouch) window.addEventListener("pointerdown", enableTilt, { once: true });
+  if (isTouch) {
+    // первый жест (тап по интро/экрану) — запрашиваем доступ к датчикам
+    window.addEventListener("pointerdown", enableTilt, { once: true });
+    window.addEventListener("touchstart", enableTilt, { once: true });
+  }
 
   const posData = new Float32Array(COUNT * 3);
   const velData = new Float32Array(COUNT * 3);
@@ -428,13 +429,14 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
       vTmp.set(posData[b], posData[b + 1], posData[b + 2]);
       const vel = new THREE.Vector3(velData[b], velData[b + 1], velData[b + 2]);
       vel.y -= delta * cfg.gravity * sizeData[i];
-      vel.x += delta * cfg.gravity * sizeData[i] * grav.x;   // наклон телефона -> катятся вбок
-      if (shake) {
-        vel.x += (Math.random() - 0.5) * cfg.maxVelocity * 6;
-        vel.y += (Math.random() - 0.5) * cfg.maxVelocity * 6;
+      vel.x += delta * cfg.gravity * sizeData[i] * grav.x * 2.2;   // наклон телефона -> катятся вбок
+      if (shakeEnergy > 0.02) {
+        const k = shakeEnergy * cfg.maxVelocity * 5;
+        vel.x += (Math.random() - 0.5) * k;
+        vel.y += (Math.random() - 0.5) * k;
       }
       vel.multiplyScalar(cfg.friction);
-      vel.clampLength(0, shake ? cfg.maxVelocity * 5 : cfg.maxVelocity);
+      vel.clampLength(0, cfg.maxVelocity * (1 + shakeEnergy * 5));
       vTmp.add(vel);
 
       for (let j = 0; j < COUNT; j++) {
@@ -471,7 +473,7 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
       posData[b] = vTmp.x; posData[b + 1] = vTmp.y; posData[b + 2] = vTmp.z;
       velData[b] = vel.x; velData[b + 1] = vel.y; velData[b + 2] = vel.z;
     }
-    shake = false;
+    shakeEnergy *= 0.9;   // энергия тряски затухает
   }
 
   const clock = new THREE.Clock();
@@ -549,8 +551,9 @@ if (!reduceMotion) {
       const py = (e.clientY - r.top) / r.height;
       card.style.setProperty("--mx", px * 100 + "%");
       card.style.setProperty("--my", py * 100 + "%");
-      // 3D-наклон — только для мыши; на touch он мешал бы скроллу, оставляем подсветку
-      if (!isTouch) {
+      if (isTouch) {
+        card.classList.add("spot");   // на touch нет :hover — включаем подсветку классом
+      } else {
         const rx = (0.5 - py) * 6;
         const ry = (px - 0.5) * 6;
         card.style.transform = "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-2px)";
@@ -558,13 +561,14 @@ if (!reduceMotion) {
       }
     };
     const reset = () => {
-      if (isTouch) return;
+      if (isTouch) { card.classList.remove("spot"); return; }
       card.style.transition = "transform 0.4s ease";
       card.style.transform = "";
     };
     card.addEventListener("pointermove", move, { passive: true });
     card.addEventListener("pointerleave", reset);
     card.addEventListener("pointercancel", reset);
+    card.addEventListener("pointerup", reset);
   });
 }
 
@@ -583,7 +587,14 @@ if (!reduceMotion) {
       const r = zone.getBoundingClientRect();
       zone.style.setProperty("--fx", ((e.clientX - r.left) / r.width) * 100 + "%");
       zone.style.setProperty("--fy", ((e.clientY - r.top) / r.height) * 100 + "%");
+      if (isTouch) zone.classList.add("spot");
     }, { passive: true });
+    if (isTouch) {
+      const clear = () => zone.classList.remove("spot");
+      zone.addEventListener("pointerup", clear);
+      zone.addEventListener("pointercancel", clear);
+      zone.addEventListener("pointerleave", clear);
+    }
   });
 }
 

@@ -537,7 +537,7 @@ section { padding: var(--pad-section) var(--pad-x); scroll-margin-top: 64px; }
   transition: opacity 0.4s ease;
   background: radial-gradient(360px circle at var(--fx, 50%) var(--fy, 0%), rgba(201, 162, 39, 0.15), transparent 65%);
 }
-.footer-shell:hover::after { opacity: 1; }
+.footer-shell:hover::after, .footer-shell.spot::after { opacity: 1; }
 
 .configurator { position: relative; }
 .configurator::after {
@@ -549,7 +549,7 @@ section { padding: var(--pad-section) var(--pad-x); scroll-margin-top: 64px; }
   transition: opacity 0.4s ease;
   background: radial-gradient(380px circle at var(--fx, 50%) var(--fy, 50%), rgba(201, 162, 39, 0.13), transparent 65%);
 }
-.configurator:hover::after { opacity: 1; }
+.configurator:hover::after, .configurator.spot::after { opacity: 1; }
 
 .footer-glow::before {
   content: "";
@@ -734,7 +734,8 @@ html.intro-lock, html.intro-lock body { overflow: hidden; }
   transition: opacity 0.3s ease;
   background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(201, 162, 39, 0.13), transparent 70%);
 }
-.stop-card:hover::after, .work-card:hover::after { opacity: 1; }
+.stop-card:hover::after, .work-card:hover::after,
+.stop-card.spot::after, .work-card.spot::after { opacity: 1; }
 
 /* ---------- road caravan + flowing dashes ---------- */
 
