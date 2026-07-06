@@ -3,3 +3,6 @@ graphify-out/
 Thumbs.db
 
 .claude/launch.json
+
+# бэкенд бота — отдельный репозиторий, живёт в этой же папке
+silkway-bot/
