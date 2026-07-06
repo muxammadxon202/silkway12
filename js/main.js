@@ -529,12 +529,13 @@ document.querySelectorAll(".freveal").forEach((t, i) => {
   t.style.transitionDelay = 0.1 + i * 0.1 + "s";
 });
 
-const footerShell = document.querySelector(".footer-shell");
-if (footerShell && !reduceMotion && !isTouch) {
-  footerShell.addEventListener("pointermove", (e) => {
-    const r = footerShell.getBoundingClientRect();
-    footerShell.style.setProperty("--fx", ((e.clientX - r.left) / r.width) * 100 + "%");
-    footerShell.style.setProperty("--fy", ((e.clientY - r.top) / r.height) * 100 + "%");
+if (!reduceMotion && !isTouch) {
+  document.querySelectorAll(".footer-shell, .configurator").forEach((zone) => {
+    zone.addEventListener("pointermove", (e) => {
+      const r = zone.getBoundingClientRect();
+      zone.style.setProperty("--fx", ((e.clientX - r.left) / r.width) * 100 + "%");
+      zone.style.setProperty("--fy", ((e.clientY - r.top) / r.height) * 100 + "%");
+    });
   });
 }
 
