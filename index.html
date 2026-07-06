@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silkway Web Company — сайты, боты и магазины под ключ</title>
+<meta name="description" content="Silkway Web Company: лендинги, сайты, Telegram-боты, свадебные приглашения и интернет-магазины под ключ. Фиксированная цена и срок. Самарканд, Узбекистан.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+  <canvas></canvas>
+  <p class="intro-hint">Нажмите, чтобы пропустить</p>
+</div>
+
+<header class="topbar">
+  <a class="topbar-logo" href="#" aria-label="Silkway Web Company — на главную">
+    <svg class="logo-mark" viewBox="0 0 240 240" aria-hidden="true"><rect x="0" y="0" width="240" height="240" rx="54" fill="var(--lapis)"/><g transform="translate(60, 38.6) scale(0.72)"><rect x="34" y="0" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="68" y="0" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="102" y="0" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="136" y="0" width="30" height="30" rx="6" fill="var(--gold-soft)"/><rect x="0" y="34" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="0" y="68" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="34" y="102" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="68" y="102" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="102" y="102" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="136" y="136" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="136" y="170" width="30" height="30" rx="6" fill="var(--sand)"/><rect x="0" y="204" width="30" height="30" rx="6" fill="var(--gold-soft)"/><rect x="34" y="204" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="68" y="204" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="102" y="204" width="30" height="30" rx="6" fill="var(--gold)"/></g></svg>
+    <span class="topbar-word">Silkway</span>
+  </a>
+  <nav class="topbar-nav" aria-label="Основная навигация">
+    <a href="#services">Услуги</a>
+    <a href="#configurator">Собрать заказ</a>
+    <a href="#work">Работы</a>
+    <a href="#process">Как работаем</a>
+  </nav>
+  <div class="topbar-lang" role="group" aria-label="Язык сайта">
+    <button class="lang-btn is-active" type="button" aria-pressed="true">RU</button>
+    <button class="lang-btn" type="button" aria-pressed="false" title="Узбекская версия скоро">UZ</button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <canvas class="hero-bg" id="hero-ballpit" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Студия цифровых услуг · Самарканд</p>
+      <h1 class="hero-title">Сайты, боты и&nbsp;магазины — <em>под ключ</em></h1>
+      <p class="hero-sub">Пять услуг с фиксированной ценой и сроком. Соберите заказ на этой странице — заявка придёт нам в Telegram, работа начнётся сегодня.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#configurator">Собрать заказ</a>
+        <a class="btn btn-ghost" href="#services">Смотреть услуги</a>
+      </div>
+      <dl class="hero-facts">
+        <div><dt>от 3 дней</dt><dd>запуск проекта</dd></div>
+        <div><dt>5 услуг</dt><dd>всё под ключ</dd></div>
+        <div><dt>1 чат</dt><dd>весь процесс в Telegram</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="tech-strip" aria-hidden="true">
+    <div class="tech-track" id="tech-track">
+      <span>React</span><span>Next.js</span><span>Astro</span><span>Flutter</span><span>Node.js</span><span>aiogram</span><span>Tailwind</span><span>Telegram API</span><span>Click</span><span>Payme</span><span>Vercel</span><span>PostgreSQL</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-head">
+    <h2>Пять остановок</h2>
+    <p>Каждая услуга — готовый пакет: известно, что входит, сколько стоит и когда будет готово.</p>
+  </div>
+
+  <div class="road" id="road">
+    <div class="road-line" aria-hidden="true"><span class="road-progress" id="road-progress"></span></div>
+
+    <article class="stop" data-service="landing">
+      <span class="stop-dot" aria-hidden="true"></span>
+      <div class="stop-card">
+        <h3>Лендинг</h3>
+        <p class="stop-desc">Одностраничный сайт, который продаёт одну услугу или товар. Быстрый, с анимацией и формой заявки.</p>
+        <ul class="stop-list">
+          <li>Дизайн под ваш бренд</li>
+          <li>Адаптив под телефон</li>
+          <li>Форма заявки в Telegram</li>
+        </ul>
+        <p class="stop-meta"><span class="stop-price">от 2 500 000 сум</span><span class="stop-days">5 дней</span></p>
+        <div class="stop-actions">
+          <button class="btn btn-line" type="button" data-order="landing">Заказать</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="stop" data-service="site">
+      <span class="stop-dot" aria-hidden="true"></span>
+      <div class="stop-card">
+        <h3>Сайт компании</h3>
+        <p class="stop-desc">Многостраничный сайт: о компании, услуги, контакты. С админ-панелью — сами меняете цены и тексты.</p>
+        <ul class="stop-list">
+          <li>До 7 страниц</li>
+          <li>Карта и контакты</li>
+          <li>Быстрая загрузка, SEO-база</li>
+        </ul>
+        <p class="stop-meta"><span class="stop-price">от 4 500 000 сум</span><span class="stop-days">10 дней</span></p>
+        <div class="stop-actions">
+          <button class="btn btn-line" type="button" data-order="site">Заказать</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="stop" data-service="bot">
+      <span class="stop-dot" aria-hidden="true"></span>
+      <div class="stop-card">
+        <h3>Telegram-бот</h3>
+        <p class="stop-desc">Бот принимает заказы, отвечает клиентам и присылает вам заявки. Эта страница отправляет заказы именно так.</p>
+        <ul class="stop-list">
+          <li>Меню и сценарии диалога</li>
+          <li>Заявки вам в чат</li>
+          <li>Кнопки, каталог, корзина</li>
+        </ul>
+        <p class="stop-meta"><span class="stop-price">от 2 500 000 сум</span><span class="stop-days">7 дней</span></p>
+        <div class="stop-actions">
+          <button class="btn btn-line" type="button" data-order="bot">Заказать</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="stop" data-service="wedding">
+      <span class="stop-dot" aria-hidden="true"></span>
+      <div class="stop-card">
+        <h3>Свадебное приглашение</h3>
+        <p class="stop-desc">Сайт-приглашение на двух языках: у каждого гостя личная ссылка с его именем, ответ приходит вам в Telegram.</p>
+        <ul class="stop-list">
+          <li>RU + UZ версии</li>
+          <li>Личная ссылка каждому гостю</li>
+          <li>Ответы «приду / не приду» в Telegram</li>
+        </ul>
+        <p class="stop-meta"><span class="stop-price">от 800 000 сум</span><span class="stop-days">3 дня</span></p>
+        <p class="stop-market">Личные ссылки гостям — такого нет у типовых шаблонов</p>
+        <div class="stop-actions">
+          <button class="btn btn-line" type="button" data-order="wedding">Заказать</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="stop" data-service="shop">
+      <span class="stop-dot" aria-hidden="true"></span>
+      <div class="stop-card">
+        <h3>Интернет-магазин</h3>
+        <p class="stop-desc">Каталог, корзина, приём оплаты и уведомления о заказах. Торгуйте онлайн без аренды и посредников.</p>
+        <ul class="stop-list">
+          <li>Каталог и корзина</li>
+          <li>Оплата Click / Payme</li>
+          <li>Заказы вам в Telegram</li>
+        </ul>
+        <p class="stop-meta"><span class="stop-price">от 7 000 000 сум</span><span class="stop-days">14 дней</span></p>
+        <div class="stop-actions">
+          <button class="btn btn-line" type="button" data-order="shop">Заказать</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="configurator" id="configurator">
+  <div class="section-head section-head-dark">
+    <h2>Соберите заказ</h2>
+    <p>Выберите услугу и опции — цена и срок считаются сразу. Кнопка отправит готовую заявку в Telegram.</p>
+  </div>
+
+  <div class="cfg">
+    <div class="cfg-left">
+      <fieldset class="cfg-services">
+        <legend>Услуга</legend>
+        <div class="cfg-chips" id="cfg-services"></div>
+      </fieldset>
+      <fieldset class="cfg-options">
+        <legend>Опции</legend>
+        <div class="cfg-opts" id="cfg-options"></div>
+      </fieldset>
+      <fieldset class="cfg-urgency">
+        <legend>Срок</legend>
+        <label class="cfg-check">
+          <input type="checkbox" id="cfg-urgent">
+          <span>Срочно (+30% к цене) — срок короче минимум вдвое: 10 дней → 3–5 дней, 2 дня → 12 часов</span>
+        </label>
+      </fieldset>
+    </div>
+    <aside class="cfg-total" aria-live="polite">
+      <h3 class="cfg-total-title" id="cfg-name">Лендинг</h3>
+      <p class="cfg-total-price"><span id="cfg-price">1 500 000</span> сум</p>
+      <p class="cfg-total-days">Готово за <span id="cfg-days">5 дней</span></p>
+      <ul class="cfg-total-list" id="cfg-summary"></ul>
+      <a class="btn btn-gold btn-wide" id="cfg-send" href="https://t.me/silkwayuz" target="_blank" rel="noopener">Отправить заявку в Telegram</a>
+      <p class="cfg-note">Заявка скопируется — просто вставьте её в чат. Это ещё не оплата: сначала обсудим детали.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="gifts" id="gifts">
+  <div class="section-head">
+    <h2>Это входит всегда</h2>
+    <p>Не опции и не доплаты — так мы работаем с каждым заказом.</p>
+  </div>
+  <div class="gifts-grid">
+    <article class="gift">
+      <h3>Домен .uz — в подарок</h3>
+      <p>При заказе сайта или магазина регистрируем домен на год за наш счёт.</p>
+    </article>
+    <article class="gift">
+      <h3>Месяц поддержки — 0 сум</h3>
+      <p>Первый месяц после запуска правим и консультируем бесплатно.</p>
+    </article>
+    <article class="gift">
+      <h3>Два круга правок включены</h3>
+      <p>Показываем демо — вы говорите, что поправить. Дважды, без доплат.</p>
+    </article>
+    <article class="gift">
+      <h3>Ответ до 1 часа</h3>
+      <p>В рабочее время отвечаем в Telegram максимум за час.</p>
+    </article>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="section-head">
+    <h2>Сделано и работает</h2>
+    <p>Не макеты, а живые проекты — откройте и попробуйте сами.</p>
+  </div>
+  <div class="work-grid">
+    <article class="work-card">
+      <h3>Mir Orexov</h3>
+      <p>Сайт и панель заказов для продавца орехов: каталог, приём заявок, админка.</p>
+      <p class="work-tag">Сайт + админ-панель</p>
+    </article>
+    <article class="work-card">
+      <h3>Свадебное приглашение</h3>
+      <p>Двуязычный сайт-приглашение: личные ссылки гостям, ответы в Telegram.</p>
+      <p class="work-tag">Приглашение RU/UZ</p>
+    </article>
+    <article class="work-card">
+      <h3>Advant Shop</h3>
+      <p>Интернет-магазин: каталог, корзина, заказы и учёт остатков.</p>
+      <p class="work-tag">Интернет-магазин</p>
+    </article>
+    <article class="work-card">
+      <h3>Telegram-агент</h3>
+      <p>Бот, который принимает и распределяет заявки клиентов без участия оператора.</p>
+      <p class="work-tag">Telegram-бот</p>
+    </article>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="section-head">
+    <h2>Как работаем</h2>
+    <p>Четыре шага от заявки до запуска — порядок всегда одинаковый.</p>
+  </div>
+  <ol class="steps">
+    <li class="step">
+      <h3>Заявка</h3>
+      <p>Вы отправляете заказ с этой страницы. Отвечаем в Telegram в течение часа в рабочее время.</p>
+    </li>
+    <li class="step">
+      <h3>Бриф и предоплата</h3>
+      <p>Уточняем детали, фиксируем цену и срок письменно. Предоплата 50% — и работа началась.</p>
+    </li>
+    <li class="step">
+      <h3>Демо и правки</h3>
+      <p>Показываем рабочую версию по ссылке. Два круга правок входят в цену.</p>
+    </li>
+    <li class="step">
+      <h3>Запуск и передача</h3>
+      <p>Подключаем домен, передаём доступы и инструкцию. Месяц поддержки — бесплатно.</p>
+    </li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-shell">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="footer-grid">
+      <div class="footer-brand freveal">
+        <svg class="logo-mark logo-mark-lg" viewBox="0 0 240 240" aria-hidden="true"><rect x="0" y="0" width="240" height="240" rx="54" fill="var(--lapis)"/><g transform="translate(60, 38.6) scale(0.72)"><rect x="34" y="0" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="68" y="0" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="102" y="0" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="136" y="0" width="30" height="30" rx="6" fill="var(--gold-soft)"/><rect x="0" y="34" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="0" y="68" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="34" y="102" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="68" y="102" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="102" y="102" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="136" y="136" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="136" y="170" width="30" height="30" rx="6" fill="var(--sand)"/><rect x="0" y="204" width="30" height="30" rx="6" fill="var(--gold-soft)"/><rect x="34" y="204" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="68" y="204" width="30" height="30" rx="6" fill="var(--gold)"/><rect x="102" y="204" width="30" height="30" rx="6" fill="var(--gold)"/></g></svg>
+        <p class="footer-word">Silkway Web Company</p>
+        <p class="footer-sub">Сайты, боты и магазины под ключ · Самарканд</p>
+        <p class="footer-copy-line">© 2026 Silkway. Все права защищены.</p>
+      </div>
+      <nav class="footer-col freveal" aria-label="Услуги">
+        <h3>Услуги</h3>
+        <ul>
+          <li><a href="#services">Лендинг</a></li>
+          <li><a href="#services">Сайт компании</a></li>
+          <li><a href="#services">Telegram-бот</a></li>
+          <li><a href="#services">Свадебное приглашение</a></li>
+          <li><a href="#services">Интернет-магазин</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col freveal" aria-label="Навигация">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="#configurator">Собрать заказ</a></li>
+          <li><a href="#work">Работы</a></li>
+          <li><a href="#process">Как работаем</a></li>
+          <li><a href="#gifts">Что входит всегда</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col freveal" aria-label="Связь">
+        <h3>Связь</h3>
+        <ul>
+          <li><a href="https://t.me/silkwayuz" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="#configurator">Оставить заявку</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/intro.js"></script>
+<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
