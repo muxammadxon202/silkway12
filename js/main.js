@@ -1,63 +1,63 @@
 const SERVICES = {
   landing: {
-    name: "Лендинг",
+    name: { uz: "Lending", ru: "Лендинг" },
     base: 2500000,
     days: 5,
     options: [
-      { id: "anim", name: "Анимации и микро-взаимодействия", price: 300000 },
-      { id: "lang2", name: "Вторая языковая версия (UZ или RU)", price: 400000 },
-      { id: "pay", name: "Приём оплаты Click / Payme", price: 500000 },
-      { id: "seo", name: "SEO-база и подключение аналитики", price: 250000 },
-      { id: "host", name: "Хостинг и домен .uz на год", price: 700000 },
+      { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 300000 },
+      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 400000 },
+      { id: "pay", name: { uz: "Click / Payme to'lovini qabul qilish", ru: "Приём оплаты Click / Payme" }, price: 500000 },
+      { id: "seo", name: { uz: "SEO-asos va analitika ulash", ru: "SEO-база и подключение аналитики" }, price: 250000 },
+      { id: "host", name: { uz: "Hosting va .uz domeni bir yilga", ru: "Хостинг и домен .uz на год" }, price: 700000 },
     ],
   },
   site: {
-    name: "Сайт компании",
+    name: { uz: "Kompaniya sayti", ru: "Сайт компании" },
     base: 4500000,
     days: 10,
     options: [
-      { id: "admin", name: "Админ-панель — сами меняете контент", price: 1500000 },
-      { id: "blog", name: "Раздел новостей или блога", price: 500000 },
-      { id: "lang2", name: "Вторая языковая версия (UZ или RU)", price: 600000 },
-      { id: "tg", name: "Заявки с сайта в Telegram", price: 400000 },
-      { id: "crm", name: "Интеграция с CRM", price: 2500000 },
-      { id: "host", name: "Хостинг и домен .uz на год", price: 700000 },
+      { id: "admin", name: { uz: "Admin-panel — kontentni o'zingiz o'zgartirasiz", ru: "Админ-панель — сами меняете контент" }, price: 1500000 },
+      { id: "blog", name: { uz: "Yangiliklar yoki blog bo'limi", ru: "Раздел новостей или блога" }, price: 500000 },
+      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 600000 },
+      { id: "tg", name: { uz: "Saytdan arizalar Telegramga", ru: "Заявки с сайта в Telegram" }, price: 400000 },
+      { id: "crm", name: { uz: "CRM bilan integratsiya", ru: "Интеграция с CRM" }, price: 2500000 },
+      { id: "host", name: { uz: "Hosting va .uz domeni bir yilga", ru: "Хостинг и домен .uz на год" }, price: 700000 },
     ],
   },
   bot: {
-    name: "Telegram-бот",
+    name: { uz: "Telegram-bot", ru: "Telegram-бот" },
     base: 2500000,
     days: 7,
     options: [
-      { id: "pay", name: "Приём платежей в боте", price: 700000 },
-      { id: "admin", name: "Админ-панель для управления ботом", price: 800000 },
-      { id: "mail", name: "Рассылки по базе клиентов", price: 400000 },
-      { id: "site", name: "Интеграция с вашим сайтом", price: 500000 },
-      { id: "host", name: "Сервер и работа бота на год", price: 600000 },
+      { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 700000 },
+      { id: "admin", name: { uz: "Botni boshqarish uchun admin-panel", ru: "Админ-панель для управления ботом" }, price: 800000 },
+      { id: "mail", name: { uz: "Mijozlar bazasi bo'yicha tarqatmalar", ru: "Рассылки по базе клиентов" }, price: 400000 },
+      { id: "site", name: { uz: "Saytingiz bilan integratsiya", ru: "Интеграция с вашим сайтом" }, price: 500000 },
+      { id: "host", name: { uz: "Server va bot ishi bir yilga", ru: "Сервер и работа бота на год" }, price: 600000 },
     ],
   },
   wedding: {
-    name: "Свадебное приглашение",
+    name: { uz: "To'y taklifnomasi", ru: "Свадебное приглашение" },
     base: 800000,
     days: 3,
     options: [
-      { id: "guests", name: "Личные ссылки для каждого гостя", price: 200000 },
-      { id: "rsvp", name: "Ответы гостей вам в Telegram", price: 150000 },
-      { id: "music", name: "Музыка и анимация открытия", price: 150000 },
-      { id: "map", name: "Карта и маршрут до зала", price: 100000 },
+      { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 200000 },
+      { id: "rsvp", name: { uz: "Mehmonlar javoblari sizga Telegramga", ru: "Ответы гостей вам в Telegram" }, price: 150000 },
+      { id: "music", name: { uz: "Musiqa va ochilish animatsiyasi", ru: "Музыка и анимация открытия" }, price: 150000 },
+      { id: "map", name: { uz: "Xarita va zalgacha yo'nalish", ru: "Карта и маршрут до зала" }, price: 100000 },
     ],
   },
   shop: {
-    name: "Интернет-магазин",
+    name: { uz: "Onlayn do'kon", ru: "Интернет-магазин" },
     base: 7000000,
     days: 14,
     options: [
-      { id: "pay", name: "Оплата Click / Payme", price: 800000 },
-      { id: "stock", name: "Учёт склада и остатков", price: 1000000 },
-      { id: "bot", name: "Telegram-бот магазина", price: 1200000 },
-      { id: "delivery", name: "Доставка и статусы заказов", price: 600000 },
-      { id: "crm", name: "Интеграция с CRM и складом", price: 2500000 },
-      { id: "host", name: "Хостинг и домен .uz на год", price: 700000 },
+      { id: "pay", name: { uz: "Click / Payme to'lovi", ru: "Оплата Click / Payme" }, price: 800000 },
+      { id: "stock", name: { uz: "Ombor va qoldiq hisobi", ru: "Учёт склада и остатков" }, price: 1000000 },
+      { id: "bot", name: { uz: "Do'kon Telegram-boti", ru: "Telegram-бот магазина" }, price: 1200000 },
+      { id: "delivery", name: { uz: "Yetkazib berish va buyurtma statuslari", ru: "Доставка и статусы заказов" }, price: 600000 },
+      { id: "crm", name: { uz: "CRM va ombor bilan integratsiya", ru: "Интеграция с CRM и складом" }, price: 2500000 },
+      { id: "host", name: { uz: "Hosting va .uz domeni bir yilga", ru: "Хостинг и домен .uz на год" }, price: 700000 },
     ],
   },
 };
@@ -66,6 +66,31 @@ const TG_URL = "https://t.me/silkway12";
 const state = { service: "landing", options: new Set(), urgent: false };
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isTouch = window.matchMedia("(pointer: coarse)").matches;
+
+const L = () => (window.SILKWAY_LANG === "ru" ? "ru" : "uz");
+const UI = {
+  uz: {
+    send: "Arizani Telegramga yuborish",
+    copied: "Ariza nusxalandi — chatga qo'ying",
+    orderTitle: "Silkway saytidan ariza",
+    fService: "Xizmat", fOptions: "Opsiyalar", fUrgentYes: "Shoshilinch: ha",
+    fCalc: "Hisob", fSum: "so'm", fTerm: "muddat",
+    basePkg: (n) => "«" + n + "» asosiy paketi",
+    urgentItem: "Shoshilinch bajarish",
+    urgent12: "12 soat", urgent24: "1–2 kun",
+  },
+  ru: {
+    send: "Отправить заявку в Telegram",
+    copied: "Заявка скопирована — вставьте в чат",
+    orderTitle: "Заявка с сайта Silkway",
+    fService: "Услуга", fOptions: "Опции", fUrgentYes: "Срочно: да",
+    fCalc: "Расчёт", fSum: "сум", fTerm: "срок",
+    basePkg: (n) => "Базовый пакет «" + n + "»",
+    urgentItem: "Срочное выполнение",
+    urgent12: "12 часов", urgent24: "1–2 дня",
+  },
+};
+const ui = () => UI[L()];
 
 const fmt = (n) => n.toLocaleString("ru-RU").replace(/,/g, " ");
 
@@ -86,7 +111,7 @@ function renderChips() {
     const b = document.createElement("button");
     b.type = "button";
     b.className = "cfg-chip" + (key === state.service ? " is-active" : "");
-    b.textContent = svc.name;
+    b.textContent = svc.name[L()];
     b.setAttribute("aria-pressed", key === state.service);
     b.addEventListener("click", () => {
       state.service = key;
@@ -114,7 +139,7 @@ function renderOptions() {
     });
     const name = document.createElement("span");
     name.className = "cfg-opt-name";
-    name.textContent = opt.name;
+    name.textContent = opt.name[L()];
     const price = document.createElement("span");
     price.className = "cfg-opt-price";
     price.textContent = "+" + fmt(opt.price);
@@ -124,6 +149,7 @@ function renderOptions() {
 }
 
 function dayWord(n) {
+  if (L() === "uz") return "kun";
   const m10 = n % 10;
   const m100 = n % 100;
   if (m10 === 1 && m100 !== 11) return "день";
@@ -132,8 +158,8 @@ function dayWord(n) {
 }
 
 function urgentText(days) {
-  if (days <= 2) return "12 часов";
-  if (days <= 4) return "1–2 дня";
+  if (days <= 2) return ui().urgent12;
+  if (days <= 4) return ui().urgent24;
   const lo = Math.ceil(days * 0.3);
   const hi = Math.ceil(days * 0.5);
   return lo + "–" + hi + " " + dayWord(hi);
@@ -146,7 +172,7 @@ function calc() {
   for (const opt of svc.options) {
     if (state.options.has(opt.id)) {
       price += opt.price;
-      chosen.push(opt.name);
+      chosen.push(opt.name[L()]);
     }
   }
   const days = svc.days + Math.ceil(chosen.length * 0.8);
@@ -182,12 +208,12 @@ function animatePrice(target) {
 
 function renderTotal() {
   const { svc, price, daysText, chosen } = calc();
-  el.name.textContent = svc.name;
+  el.name.textContent = svc.name[L()];
   animatePrice(price);
   el.days.textContent = daysText;
   el.summary.innerHTML = "";
-  const items = ["Базовый пакет «" + svc.name + "»", ...chosen];
-  if (state.urgent) items.push("Срочное выполнение");
+  const items = [ui().basePkg(svc.name[L()]), ...chosen];
+  if (state.urgent) items.push(ui().urgentItem);
   for (const item of items) {
     const li = document.createElement("li");
     li.textContent = item;
@@ -197,12 +223,13 @@ function renderTotal() {
 
 function buildOrderText() {
   const { svc, price, daysText, chosen } = calc();
+  const u = ui();
   return [
-    "Заявка с сайта Silkway",
-    "Услуга: " + svc.name,
-    ...(chosen.length ? ["Опции: " + chosen.join(", ")] : []),
-    ...(state.urgent ? ["Срочно: да"] : []),
-    "Расчёт: " + fmt(price) + " сум, срок: " + daysText,
+    u.orderTitle,
+    u.fService + ": " + svc.name[L()],
+    ...(chosen.length ? [u.fOptions + ": " + chosen.join(", ")] : []),
+    ...(state.urgent ? [u.fUrgentYes] : []),
+    u.fCalc + ": " + fmt(price) + " " + u.fSum + ", " + u.fTerm + ": " + daysText,
   ].join("\n");
 }
 
@@ -214,8 +241,8 @@ el.urgent.addEventListener("change", () => {
 el.send.addEventListener("click", () => {
   const text = buildOrderText();
   if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
-  el.send.textContent = "Заявка скопирована — вставьте в чат";
-  setTimeout(() => { el.send.textContent = "Отправить заявку в Telegram"; }, 4000);
+  el.send.textContent = ui().copied;
+  setTimeout(() => { el.send.textContent = ui().send; }, 4000);
 });
 
 document.querySelectorAll("[data-order]").forEach((btn) => {
@@ -233,34 +260,46 @@ renderChips();
 renderOptions();
 renderTotal();
 
+// перерисовать конфигуратор при смене языка
+window.addEventListener("silkway:lang", () => {
+  renderChips();
+  renderOptions();
+  renderTotal();
+});
+
 /* ---------- hero title: word-by-word rise ---------- */
 
 if (!reduceMotion) {
-  const title = document.querySelector(".hero-title");
-  let wordIndex = 0;
-  function splitWords(node) {
-    [...node.childNodes].forEach((child) => {
-      if (child.nodeType === Node.TEXT_NODE) {
-        const frag = document.createDocumentFragment();
-        child.textContent.split(/(\s+)/).forEach((part) => {
-          if (/^\s+$/.test(part) || part === "") {
-            frag.appendChild(document.createTextNode(part));
-          } else {
-            const span = document.createElement("span");
-            span.className = "w";
-            span.style.animationDelay = 0.15 + wordIndex * 0.07 + "s";
-            span.textContent = part;
-            frag.appendChild(span);
-            wordIndex++;
-          }
-        });
-        node.replaceChild(frag, child);
-      } else if (child.nodeType === Node.ELEMENT_NODE) {
-        splitWords(child);
-      }
-    });
-  }
-  if (title) splitWords(title);
+  const splitTitle = () => {
+    const title = document.querySelector(".hero-title");
+    if (!title) return;
+    let wordIndex = 0;
+    (function splitWords(node) {
+      [...node.childNodes].forEach((child) => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach((part) => {
+            if (/^\s+$/.test(part) || part === "") {
+              frag.appendChild(document.createTextNode(part));
+            } else {
+              const span = document.createElement("span");
+              span.className = "w";
+              span.style.animationDelay = 0.15 + wordIndex * 0.07 + "s";
+              span.textContent = part;
+              frag.appendChild(span);
+              wordIndex++;
+            }
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          splitWords(child);
+        }
+      });
+    })(title);
+  };
+  splitTitle();
+  // i18n перезаписывает заголовок при смене языка — пересобираем слова заново
+  window.addEventListener("silkway:lang", splitTitle);
 }
 
 /* ---------- tech strip: seamless loop ---------- */

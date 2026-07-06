@@ -15,7 +15,9 @@
   const ctx = canvas.getContext("2d", { willReadFrequently: true });
   document.documentElement.classList.add("intro-lock");
 
-  const TEXTS = ["SILKWAY", "Под ключ."];
+  let introLang = "uz";
+  try { const s = localStorage.getItem("silkway_lang"); if (s === "ru") introLang = "ru"; } catch (e) {}
+  const TEXTS = ["SILKWAY", introLang === "ru" ? "Под ключ." : "Tayyor holda."];
   const COLOR = "rgba(247, 244, 238, 1)";
   const VAPORIZE_MS = 1300;
   const FADE_MS = 450;
