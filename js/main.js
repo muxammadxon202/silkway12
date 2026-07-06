@@ -62,7 +62,7 @@ const SERVICES = {
   },
 };
 
-const TG_URL = "https://t.me/silkwayuz";
+const TG_URL = "https://t.me/silkway12";
 const state = { service: "landing", options: new Set(), urgent: false };
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isTouch = window.matchMedia("(pointer: coarse)").matches;
