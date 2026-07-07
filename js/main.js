@@ -60,6 +60,46 @@ const SERVICES = {
       { id: "host", name: { uz: "Hosting va .uz domeni bir yilga", ru: "Хостинг и домен .uz на год" }, price: 700000 },
     ],
   },
+  optim: {
+    name: { uz: "Biznes-jarayon optimizatsiyasi", ru: "Оптимизация бизнес-процессов" },
+    base: 6000000,
+    days: 14,
+    options: [
+      { id: "audit", name: { uz: "Bo'limlarning chuqur auditi", ru: "Глубокий аудит отделов" }, price: 1500000 },
+      { id: "docs", name: { uz: "Reglament va yo'riqnomalar", ru: "Регламенты и инструкции" }, price: 800000 },
+      { id: "auto", name: { uz: "1 jarayonni avtomatlashtirish", ru: "Автоматизация одного процесса" }, price: 1200000 },
+    ],
+  },
+  hr: {
+    name: { uz: "HR-integratsiya", ru: "HR-интеграция" },
+    base: 7000000,
+    days: 16,
+    options: [
+      { id: "ats", name: { uz: "Nomzodlar trekeri (ATS)", ru: "Трекер кандидатов (ATS)" }, price: 1500000 },
+      { id: "bot", name: { uz: "Telegramda HR-bot", ru: "HR-бот в Telegram" }, price: 900000 },
+      { id: "docs", name: { uz: "Hujjatlarni avto-yaratish", ru: "Автогенерация документов" }, price: 700000 },
+    ],
+  },
+  crm: {
+    name: { uz: "CRM-integratsiya", ru: "CRM-интеграция" },
+    base: 9000000,
+    days: 18,
+    options: [
+      { id: "migrate", name: { uz: "Ma'lumotlarni ko'chirish", ru: "Перенос данных" }, price: 1200000 },
+      { id: "tel", name: { uz: "Telefoniya va qo'ng'iroqlar", ru: "Телефония и звонки" }, price: 1500000 },
+      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 800000 },
+    ],
+  },
+  ai: {
+    name: { uz: "AI-agentlar", ru: "ИИ-агенты" },
+    base: 12000000,
+    days: 21,
+    options: [
+      { id: "voice", name: { uz: "Ovozli bot", ru: "Голосовой бот" }, price: 3000000 },
+      { id: "crm", name: { uz: "CRM bilan bog'lash", ru: "Связь с CRM" }, price: 1500000 },
+      { id: "analytics", name: { uz: "Suhbatlar tahlili", ru: "Аналитика диалогов" }, price: 1000000 },
+    ],
+  },
 };
 
 const TG_URL = "https://t.me/silkway12";
