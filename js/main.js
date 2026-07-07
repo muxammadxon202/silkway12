@@ -650,3 +650,85 @@ const io = new IntersectionObserver(
 );
 revealTargets.forEach((t) => io.observe(t));
 document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
+
+/* ---------- hero: пульсирующее сияние + мерцающая пыль (фон под шариками) ---------- */
+
+(function initHeroStars() {
+  if (reduceMotion) return;
+  const canvas = document.getElementById("hero-stars");
+  const hero = document.querySelector(".hero");
+  if (!canvas || !hero) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W = 0;
+  let H = 0;
+  let stars = [];
+
+  function sizeStars() {
+    W = hero.clientWidth;
+    H = hero.clientHeight;
+    canvas.width = Math.floor(W * dpr);
+    canvas.height = Math.floor(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.floor(W * H * 0.00006);
+    stars = [];
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
+        size: 0.5 + Math.random(),
+        alpha: 0.15 + Math.random() * 0.35,
+        phase: Math.random() * Math.PI * 2,
+        gold: Math.random() < 0.18,
+      });
+    }
+  }
+  sizeStars();
+  window.addEventListener("resize", sizeStars);
+
+  let running = false;
+  let rafId = null;
+
+  function frame(t) {
+    rafId = requestAnimationFrame(frame);
+    ctx.clearRect(0, 0, W, H);
+
+    const pulse = Math.sin(t * 0.0008) * 0.05 + 0.12;
+    const g = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.7);
+    g.addColorStop(0, "rgba(201, 162, 39, " + pulse + ")");
+    g.addColorStop(1, "rgba(201, 162, 39, 0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    for (const s of stars) {
+      s.x += s.vx;
+      s.y += s.vy;
+      if (s.x < 0) s.x = W;
+      if (s.x > W) s.x = 0;
+      if (s.y < 0) s.y = H;
+      if (s.y > H) s.y = 0;
+      const tw = Math.sin(t * 0.002 + s.phase) * 0.5 + 0.5;
+      ctx.globalAlpha = s.alpha * (0.3 + 0.7 * tw);
+      ctx.fillStyle = s.gold ? "#D9B545" : "#F7F4EE";
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  new IntersectionObserver((entries) => {
+    const visible = entries[0].isIntersecting;
+    if (visible && !running) {
+      running = true;
+      rafId = requestAnimationFrame(frame);
+    } else if (!visible && running) {
+      running = false;
+      cancelAnimationFrame(rafId);
+    }
+  }).observe(hero);
+})();

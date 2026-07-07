@@ -131,7 +131,8 @@ a { color: inherit; }
 
 .hero { background: var(--night); color: var(--sand); position: relative; overflow: hidden; }
 
-.hero-bg {
+.hero-bg,
+.hero-stars {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -163,10 +164,15 @@ a { color: inherit; }
 .hero-title {
   font-size: clamp(1.9rem, 4.2vw, 3.2rem);
   margin-bottom: 24px;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(247, 244, 238, 0.7) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-title em {
   font-style: normal;
   color: var(--gold-soft);
+  -webkit-text-fill-color: var(--gold-soft);
 }
 
 .hero-sub {
