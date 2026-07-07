@@ -127,6 +127,69 @@ a { color: inherit; }
 }
 .lang-btn.is-active { background: var(--gold); border-color: var(--gold); color: var(--night); font-weight: 500; }
 
+/* ---------- theme toggle (день/ночь) ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 999px;
+  border: 1.5px solid rgba(143, 163, 200, 0.35);
+  background: transparent;
+  color: var(--mist);
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.theme-toggle:hover { border-color: var(--gold); color: var(--gold-soft); }
+.theme-ico { display: none; line-height: 0; }
+.theme-ico svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-moon { display: inline-flex; }
+html.theme-light .theme-moon { display: none; }
+html.theme-light .theme-sun { display: inline-flex; }
+html.theme-light .theme-toggle {
+  color: var(--gold);
+  border-color: rgba(201, 162, 39, 0.55);
+  box-shadow: 0 0 14px rgba(201, 162, 39, 0.35);
+}
+
+/* ---------- light theme ---------- */
+.topbar, .topbar-word, .topbar-nav a,
+.configurator, .cfg legend, .cfg-chip, .cfg-opt, .cfg-check,
+.cfg-total, .cfg-total-title, .cfg-total-days, .cfg-total-list,
+.cfg-contact, .cfg-note, .section-head-dark h2, .section-head-dark p,
+.footer, .footer-shell, .footer-word, .footer-sub, .footer-copy-line,
+.footer-col h3, .footer-col a {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+html.theme-light .topbar { background: rgba(247, 244, 238, 0.9); color: var(--lapis); }
+html.theme-light .topbar-word { color: var(--lapis); }
+html.theme-light .topbar-nav a { color: #4A5468; }
+
+html.theme-light .configurator { background: var(--sand); color: var(--lapis); }
+html.theme-light .section-head-dark h2 { color: var(--lapis); }
+html.theme-light .section-head-dark p,
+html.theme-light .cfg-check,
+html.theme-light .cfg-total-days,
+html.theme-light .cfg-total-list,
+html.theme-light .cfg-note { color: #4A5468; }
+html.theme-light .cfg-chip { color: #4A5468; border-color: rgba(28, 58, 112, 0.22); }
+html.theme-light .cfg-opt { background: var(--white); border-color: rgba(28, 58, 112, 0.14); }
+html.theme-light .cfg-total { background: var(--white); }
+html.theme-light .cfg-total-title { color: var(--lapis); }
+html.theme-light .cfg-contact { background: var(--white); color: var(--lapis); border-color: rgba(28, 58, 112, 0.22); }
+html.theme-light .cfg-contact::placeholder { color: rgba(28, 58, 112, 0.45); }
+
+html.theme-light .footer { background: var(--sand); }
+html.theme-light .footer-shell { background: var(--sand); color: var(--lapis); }
+html.theme-light .footer-word { color: var(--lapis); }
+html.theme-light .footer-col h3 { color: var(--lapis); }
+html.theme-light .footer-col a,
+html.theme-light .footer-sub,
+html.theme-light .footer-copy-line { color: #4A5468; }
+
 /* ---------- hero ---------- */
 
 .hero { background: var(--night); color: var(--sand); position: relative; overflow: hidden; transition: background 0.5s ease; }

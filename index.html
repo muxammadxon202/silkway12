@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
+<script>try{if(localStorage.getItem('silkway_theme')==='light')document.documentElement.classList.add('theme-light');}catch(e){}</script>
 </head>
 <body>
 
@@ -33,6 +34,10 @@
     <button class="lang-btn is-active" type="button" data-lang="uz" aria-pressed="true">UZ</button>
     <button class="lang-btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
   </div>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Тема: день / ночь" aria-pressed="false">
+    <span class="theme-ico theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
+    <span class="theme-ico theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg></span>
+  </button>
 </header>
 
 <main>
@@ -40,10 +45,6 @@
 <section class="hero">
   <canvas class="hero-stars" id="hero-stars" aria-hidden="true"></canvas>
   <canvas class="hero-bg" id="hero-ballpit" aria-hidden="true"></canvas>
-  <button id="glow-toggle" class="glow-toggle" type="button" aria-pressed="false">
-    <span class="glow-opt glow-opt-night"><span aria-hidden="true">☾</span> <span data-i18n="hero.glow.night">Tungi</span></span>
-    <span class="glow-opt glow-opt-bright"><span aria-hidden="true">☀</span> <span data-i18n="hero.glow.bright">Yorqin</span></span>
-  </button>
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="hero-eyebrow" data-i18n="hero.eyebrow">Raqamli xizmatlar studiyasi · Samarqand</p>

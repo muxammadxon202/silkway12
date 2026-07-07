@@ -742,24 +742,31 @@ const io = new IntersectionObserver(
 revealTargets.forEach((t) => io.observe(t));
 document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
 
-/* ---------- hero: переключатель «ночной / ярче» ---------- */
+/* ---------- переключатель темы (день/ночь) ---------- */
 
-(function initGlowToggle() {
-  const btn = document.getElementById("glow-toggle");
-  const hero = document.querySelector(".hero");
-  if (!btn || !hero) return;
+(function initThemeToggle() {
+  const KEY = "silkway_theme";
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
 
-  function setMode(on) {
-    hero.classList.toggle("is-bright", on);
-    btn.setAttribute("aria-pressed", on);
-    try { localStorage.setItem("silkway_glow", on ? "bright" : "night"); } catch (e) {}
+  function apply(theme) {
+    root.classList.toggle("theme-light", theme === "light");
+    if (btn) btn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+    try { localStorage.setItem(KEY, theme); } catch (e) {}
   }
 
-  let bright = false;
-  try { bright = localStorage.getItem("silkway_glow") === "bright"; } catch (e) {}
-  setMode(bright);
+  let theme = "dark";
+  try {
+    const s = localStorage.getItem(KEY);
+    if (s === "light" || s === "dark") theme = s;
+  } catch (e) {}
+  apply(theme);
 
-  btn.addEventListener("click", () => setMode(!hero.classList.contains("is-bright")));
+  if (btn) {
+    btn.addEventListener("click", () => {
+      apply(root.classList.contains("theme-light") ? "dark" : "light");
+    });
+  }
 })();
 
 /* ---------- hero: пульсирующее сияние + мерцающая пыль (фон под шариками) ---------- */
