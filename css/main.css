@@ -129,7 +129,36 @@ a { color: inherit; }
 
 /* ---------- hero ---------- */
 
-.hero { background: var(--night); color: var(--sand); position: relative; overflow: hidden; }
+.hero { background: var(--night); color: var(--sand); position: relative; overflow: hidden; transition: background 0.5s ease; }
+.hero.is-bright { background: #152C58; }
+.hero.is-bright .hero-title { background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.88) 100%); -webkit-background-clip: text; background-clip: text; }
+.hero.is-bright .hero-sub { color: #C9D5EE; }
+.hero.is-bright .hero-facts dd { color: #B9C6E2; }
+
+.glow-toggle {
+  position: absolute;
+  top: 22px;
+  right: var(--pad-x);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(14, 31, 66, 0.55);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 999px;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--mist);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.25s ease;
+}
+.glow-toggle:hover { border-color: var(--gold); }
+.glow-opt { padding: 6px 14px; border-radius: 999px; transition: background 0.25s ease, color 0.25s ease; }
+.hero:not(.is-bright) .glow-opt-night,
+.hero.is-bright .glow-opt-bright { background: var(--gold); color: var(--night); font-weight: 500; }
 
 .hero-bg,
 .hero-stars {

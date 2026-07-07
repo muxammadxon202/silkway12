@@ -651,6 +651,26 @@ const io = new IntersectionObserver(
 revealTargets.forEach((t) => io.observe(t));
 document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
 
+/* ---------- hero: переключатель «ночной / ярче» ---------- */
+
+(function initGlowToggle() {
+  const btn = document.getElementById("glow-toggle");
+  const hero = document.querySelector(".hero");
+  if (!btn || !hero) return;
+
+  function setMode(on) {
+    hero.classList.toggle("is-bright", on);
+    btn.setAttribute("aria-pressed", on);
+    try { localStorage.setItem("silkway_glow", on ? "bright" : "night"); } catch (e) {}
+  }
+
+  let bright = false;
+  try { bright = localStorage.getItem("silkway_glow") === "bright"; } catch (e) {}
+  setMode(bright);
+
+  btn.addEventListener("click", () => setMode(!hero.classList.contains("is-bright")));
+})();
+
 /* ---------- hero: пульсирующее сияние + мерцающая пыль (фон под шариками) ---------- */
 
 (function initHeroStars() {
@@ -697,7 +717,10 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
     rafId = requestAnimationFrame(frame);
     ctx.clearRect(0, 0, W, H);
 
-    const pulse = Math.sin(t * 0.0008) * 0.05 + 0.12;
+    const bright = hero.classList.contains("is-bright");
+    const pulse = bright
+      ? Math.sin(t * 0.0008) * 0.07 + 0.2
+      : Math.sin(t * 0.0008) * 0.05 + 0.12;
     const g = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.7);
     g.addColorStop(0, "rgba(201, 162, 39, " + pulse + ")");
     g.addColorStop(1, "rgba(201, 162, 39, 0)");
@@ -712,7 +735,7 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
       if (s.y < 0) s.y = H;
       if (s.y > H) s.y = 0;
       const tw = Math.sin(t * 0.002 + s.phase) * 0.5 + 0.5;
-      ctx.globalAlpha = s.alpha * (0.3 + 0.7 * tw);
+      ctx.globalAlpha = Math.min(1, s.alpha * (0.3 + 0.7 * tw) * (bright ? 1.7 : 1));
       ctx.fillStyle = s.gold ? "#D9B545" : "#F7F4EE";
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);

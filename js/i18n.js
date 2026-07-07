@@ -32,6 +32,9 @@
       "hero.fact2b": "barchasi tayyor holda",
       "hero.fact3a": "1 chat",
       "hero.fact3b": "butun jarayon Telegramda",
+      "hero.glow.night": "Tungi",
+      "hero.glow.bright": "Yorqin",
+      "hero.glow.aria": "Fon yorqinligini almashtirish",
 
       "sv.title": "Beshta bekat",
       "sv.lead": "Har bir xizmat — tayyor paket: nima kirishi, qancha turishi va qachon tayyor bo'lishi ma'lum.",
@@ -158,6 +161,9 @@
       "hero.fact2b": "всё под ключ",
       "hero.fact3a": "1 чат",
       "hero.fact3b": "весь процесс в Telegram",
+      "hero.glow.night": "Ночной",
+      "hero.glow.bright": "Ярче",
+      "hero.glow.aria": "Переключить яркость фона",
 
       "sv.title": "Пять остановок",
       "sv.lead": "Каждая услуга — готовый пакет: известно, что входит, сколько стоит и когда будет готово.",
