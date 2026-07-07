@@ -735,6 +735,17 @@ html.intro-lock, html.intro-lock body { overflow: hidden; }
   opacity: 0;
   transform: translateY(0.55em);
   animation: word-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  /* слово несёт собственный градиент: без него унаследованный
+     -webkit-text-fill-color: transparent делает слова невидимыми */
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(247, 244, 238, 0.7) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-title em .w {
+  background: none;
+  color: var(--gold-soft);
+  -webkit-text-fill-color: var(--gold-soft);
 }
 @keyframes word-up { to { opacity: 1; transform: none; } }
 
