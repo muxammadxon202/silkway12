@@ -523,6 +523,11 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
   const vOther = new THREE.Vector3();
   const vDiff = new THREE.Vector3();
 
+  // курсор отталкивает шарики (порт REPULSION из combined-hero)
+  let pointerActive = false;
+  const REPEL_RADIUS = 5.0;
+  const REPEL_STRENGTH = 0.11;
+
   function resize() {
     const w = hero.clientWidth;
     const h = hero.clientHeight;
@@ -545,16 +550,18 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
       ((e.clientX - r.left) / r.width) * 2 - 1,
       -((e.clientY - r.top) / r.height) * 2 + 1
     );
+    pointerActive = true;
   });
+  const deactivate = () => { pointerActive = false; };
+  hero.addEventListener("pointerleave", deactivate);
+  hero.addEventListener("pointercancel", deactivate);
+  hero.addEventListener("pointerup", deactivate);
 
   function physics(delta) {
     raycaster.setFromCamera(pointerNdc, camera);
     raycaster.ray.intersectPlane(plane, target);
 
-    vTmp.fromArray(posData, 0).lerp(target, 0.1).toArray(posData, 0);
-    velData[0] = velData[1] = velData[2] = 0;
-
-    for (let i = 1; i < COUNT; i++) {
+    for (let i = 0; i < COUNT; i++) {
       const b = i * 3;
       vTmp.set(posData[b], posData[b + 1], posData[b + 2]);
       const vel = new THREE.Vector3(velData[b], velData[b + 1], velData[b + 2]);
@@ -564,6 +571,16 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
         const k = shakeEnergy * cfg.maxVelocity * 5;
         vel.x += (Math.random() - 0.5) * k;
         vel.y += (Math.random() - 0.5) * k;
+      }
+      if (pointerActive) {
+        const rdx = vTmp.x - target.x;
+        const rdy = vTmp.y - target.y;
+        const rd = Math.hypot(rdx, rdy);
+        if (rd < REPEL_RADIUS && rd > 0.001) {
+          const f = (REPEL_RADIUS - rd) / REPEL_RADIUS;
+          vel.x += (rdx / rd) * f * REPEL_STRENGTH;
+          vel.y += (rdy / rd) * f * REPEL_STRENGTH;
+        }
       }
       vel.multiplyScalar(cfg.friction);
       vel.clampLength(0, cfg.maxVelocity * (1 + shakeEnergy * 5));
@@ -580,10 +597,8 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
           const overlap = (sum - dist) * 0.5;
           vDiff.normalize();
           vTmp.addScaledVector(vDiff, -overlap);
-          if (j !== 0) {
-            vOther.addScaledVector(vDiff, overlap);
-            posData[ob] = vOther.x; posData[ob + 1] = vOther.y; posData[ob + 2] = vOther.z;
-          }
+          vOther.addScaledVector(vDiff, overlap);
+          posData[ob] = vOther.x; posData[ob + 1] = vOther.y; posData[ob + 2] = vOther.z;
         }
       }
 
@@ -621,7 +636,8 @@ if (techTrack) techTrack.innerHTML += techTrack.innerHTML;
       mesh.setMatrixAt(i, dummy.matrix);
     }
     mesh.instanceMatrix.needsUpdate = true;
-    glow.position.fromArray(posData, 0);
+    if (pointerActive) glow.position.copy(target);
+    else glow.position.fromArray(posData, 0);
     renderer.render(scene, camera);
   }
 
