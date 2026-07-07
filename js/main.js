@@ -63,9 +63,9 @@ const SERVICES = {
 };
 
 const TG_URL = "https://t.me/silkway12";
-// Адрес бэкенда бота. Пусто = сайт работает автономно (копирует заявку в буфер
-// и открывает Telegram). Впиши URL после деплоя VPS, напр. "https://api.silkway12.uz".
-const ORDER_API = "";
+// Адрес бэкенда бота. Пусто = автономный режим (копия в буфер + Telegram).
+// Задеплоено на VPS 45.130.148.155, HTTPS через Caddy.
+const ORDER_API = "https://api.silkway12.uz";
 
 const state = { service: "landing", options: new Set(), urgent: false };
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
