@@ -444,6 +444,30 @@ section { padding: var(--pad-section) var(--pad-x); scroll-margin-top: 64px; }
   background: var(--gold);
 }
 
+.cfg-contact {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--sand);
+  background: var(--lapis-soft);
+  border: 1.5px solid rgba(143, 163, 200, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  transition: border-color 0.18s ease;
+}
+.cfg-contact::placeholder { color: rgba(143, 163, 200, 0.7); }
+.cfg-contact:focus { outline: none; border-color: var(--gold); }
+
+.cfg-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .cfg-note { font-size: 0.8rem; color: var(--mist); margin-top: 14px; line-height: 1.5; }
 
 /* ---------- gifts ---------- */

@@ -63,6 +63,10 @@ const SERVICES = {
 };
 
 const TG_URL = "https://t.me/silkway12";
+// Адрес бэкенда бота. Пусто = сайт работает автономно (копирует заявку в буфер
+// и открывает Telegram). Впиши URL после деплоя VPS, напр. "https://api.silkway12.uz".
+const ORDER_API = "";
+
 const state = { service: "landing", options: new Set(), urgent: false };
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isTouch = window.matchMedia("(pointer: coarse)").matches;
@@ -72,6 +76,10 @@ const UI = {
   uz: {
     send: "Arizani Telegramga yuborish",
     copied: "Ariza nusxalandi — chatga qo'ying",
+    sending: "Yuborilmoqda…",
+    sent: "Ariza yuborildi ✓ Tez orada bog'lanamiz",
+    sendErr: "Yuborilmadi — chatga qo'lda yuboring",
+    contactPh: "Telefon yoki @username (ixtiyoriy)",
     orderTitle: "Silkway saytidan ariza",
     fService: "Xizmat", fOptions: "Opsiyalar", fUrgentYes: "Shoshilinch: ha",
     fCalc: "Hisob", fSum: "so'm", fTerm: "muddat",
@@ -82,6 +90,10 @@ const UI = {
   ru: {
     send: "Отправить заявку в Telegram",
     copied: "Заявка скопирована — вставьте в чат",
+    sending: "Отправляем…",
+    sent: "Заявка отправлена ✓ Скоро свяжемся",
+    sendErr: "Не отправилось — вставьте в чат вручную",
+    contactPh: "Телефон или @username (необязательно)",
     orderTitle: "Заявка с сайта Silkway",
     fService: "Услуга", fOptions: "Опции", fUrgentYes: "Срочно: да",
     fCalc: "Расчёт", fSum: "сум", fTerm: "срок",
@@ -103,6 +115,8 @@ const el = {
   days: document.getElementById("cfg-days"),
   summary: document.getElementById("cfg-summary"),
   send: document.getElementById("cfg-send"),
+  contact: document.getElementById("cfg-contact"),
+  website: document.getElementById("cfg-website"),
 };
 
 function renderChips() {
@@ -238,11 +252,48 @@ el.urgent.addEventListener("change", () => {
   renderTotal();
 });
 
-el.send.addEventListener("click", () => {
-  const text = buildOrderText();
-  if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+function fallbackCopy() {
+  if (navigator.clipboard) navigator.clipboard.writeText(buildOrderText()).catch(() => {});
   el.send.textContent = ui().copied;
   setTimeout(() => { el.send.textContent = ui().send; }, 4000);
+}
+
+async function sendToApi() {
+  el.send.textContent = ui().sending;
+  try {
+    const res = await fetch(ORDER_API.replace(/\/$/, "") + "/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        service: state.service,
+        options: [...state.options],
+        urgent: state.urgent,
+        contact: el.contact ? el.contact.value.trim() : "",
+        website: el.website ? el.website.value : "", // honeypot — должно быть пустым
+      }),
+    });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    await res.json();
+    el.send.textContent = ui().sent;
+    if (el.contact) el.contact.value = "";
+    setTimeout(() => { el.send.textContent = ui().send; }, 5000);
+  } catch (e) {
+    // бэкенд недоступен — не теряем заявку: копируем и открываем Telegram
+    if (navigator.clipboard) navigator.clipboard.writeText(buildOrderText()).catch(() => {});
+    el.send.textContent = ui().sendErr;
+    window.open("https://t.me/silkway12", "_blank", "noopener");
+    setTimeout(() => { el.send.textContent = ui().send; }, 5000);
+  }
+}
+
+el.send.addEventListener("click", (e) => {
+  if (ORDER_API) {
+    e.preventDefault();
+    sendToApi();
+  } else {
+    // автономный режим: пусть ссылка откроет Telegram, а мы скопируем текст
+    fallbackCopy();
+  }
 });
 
 document.querySelectorAll("[data-order]").forEach((btn) => {
