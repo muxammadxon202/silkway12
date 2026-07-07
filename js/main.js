@@ -116,7 +116,7 @@ const el = {
   summary: document.getElementById("cfg-summary"),
   send: document.getElementById("cfg-send"),
   contact: document.getElementById("cfg-contact"),
-  website: document.getElementById("cfg-website"),
+  website: document.getElementById("cfg-hp"),
 };
 
 function renderChips() {
