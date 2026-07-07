@@ -707,6 +707,30 @@ html.intro-lock, html.intro-lock body { overflow: hidden; }
   color: var(--gold);
   margin-left: 48px;
 }
+.tech-ico {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  vertical-align: -3px;
+  margin-right: 9px;
+  background: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+/* пути относительно этого CSS-файла (папка css/), поэтому ../ */
+.tech-ico.react      { -webkit-mask-image: url(../brand/tech/react.svg);      mask-image: url(../brand/tech/react.svg); }
+.tech-ico.nextjs     { -webkit-mask-image: url(../brand/tech/nextjs.svg);     mask-image: url(../brand/tech/nextjs.svg); }
+.tech-ico.astro      { -webkit-mask-image: url(../brand/tech/astro.svg);      mask-image: url(../brand/tech/astro.svg); }
+.tech-ico.flutter    { -webkit-mask-image: url(../brand/tech/flutter.svg);    mask-image: url(../brand/tech/flutter.svg); }
+.tech-ico.nodejs     { -webkit-mask-image: url(../brand/tech/nodejs.svg);     mask-image: url(../brand/tech/nodejs.svg); }
+.tech-ico.tailwind   { -webkit-mask-image: url(../brand/tech/tailwind.svg);   mask-image: url(../brand/tech/tailwind.svg); }
+.tech-ico.telegram   { -webkit-mask-image: url(../brand/tech/telegram.svg);   mask-image: url(../brand/tech/telegram.svg); }
+.tech-ico.vercel     { -webkit-mask-image: url(../brand/tech/vercel.svg);     mask-image: url(../brand/tech/vercel.svg); }
+.tech-ico.postgresql { -webkit-mask-image: url(../brand/tech/postgresql.svg); mask-image: url(../brand/tech/postgresql.svg); }
 @keyframes tech-scroll { to { transform: translateX(-50%); } }
 
 /* ---------- market note ---------- */
