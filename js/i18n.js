@@ -22,8 +22,8 @@
       "intro.hint": "O'tkazib yuborish uchun bosing",
 
       "hero.eyebrow": "Raqamli xizmatlar studiyasi · Samarqand",
-      "hero.title": "Saytlar, botlar va&nbsp;do'konlar — <em>tayyor holda</em>",
-      "hero.sub": "Belgilangan narx va muddatli beshta xizmat. Buyurtmani shu sahifada yig'ing — ariza bizga Telegramga keladi, ish bugun boshlanadi.",
+      "hero.title": "Sayt, bot va&nbsp;do'kon — <em>aniq narxda, o'z vaqtida</em>",
+      "hero.sub": "Narxi va muddati oldindan aniq — kelishuvdan keyin o'zgarmaydi. Buyurtmani shu sahifada yig'ing — ariza bizga Telegramga keladi, ish bugun boshlanadi.",
       "hero.cta1": "Buyurtma yig'ish",
       "hero.cta2": "Xizmatlarni ko'rish",
       "hero.fact1a": "3 kundan",
@@ -153,7 +153,7 @@
       "proc.s4h": "Ishga tushirish va topshirish",
       "proc.s4p": "Domenni ulaymiz, kirish ma'lumotlari va yo'riqnomani topshiramiz. Bir oy qo'llab-quvvatlash — bepul.",
 
-      "foot.sub": "Saytlar, botlar va do'konlar tayyor holda · Samarqand",
+      "foot.sub": "Sayt, bot va do'kon — aniq narxda, o'z vaqtida · Samarqand",
       "foot.copy": "© 2026 Silkway. Barcha huquqlar himoyalangan.",
       "foot.col_services": "Xizmatlar",
       "foot.col_nav": "Navigatsiya",
@@ -178,7 +178,7 @@
 
       "hero.eyebrow": "Студия цифровых услуг · Самарканд",
       "hero.title": "Сайты, боты и&nbsp;магазины — <em>под ключ</em>",
-      "hero.sub": "Пять услуг с фиксированной ценой и сроком. Соберите заказ на этой странице — заявка придёт нам в Telegram, работа начнётся сегодня.",
+      "hero.sub": "Цена и срок известны заранее — и не меняются после согласования. Соберите заказ на этой странице — заявка придёт нам в Telegram, работа начнётся сегодня.",
       "hero.cta1": "Собрать заказ",
       "hero.cta2": "Смотреть услуги",
       "hero.fact1a": "от 3 дней",
