@@ -785,15 +785,19 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
   }
 })();
 
-/* ---------- hero: пульсирующее сияние + мерцающая пыль (фон под шариками) ---------- */
+/* ---------- звёздное поле: переиспользуемая мерцающая пыль ---------- */
+/* Используется в hero (с золотым сиянием) и как лёгкий фон во всех секциях. */
 
-(function initHeroStars() {
-  if (reduceMotion) return;
-  const canvas = document.getElementById("hero-stars");
-  const hero = document.querySelector(".hero");
-  if (!canvas || !hero) return;
+function startStarfield(canvas, host, opts) {
+  if (reduceMotion || !canvas || !host) return;
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
+
+  const density = opts.density || 0.00006;
+  const glow = !!opts.glow;
+  // 'auto' — секция сама тёмная/светлая в зависимости от темы (hero/configurator/footer);
+  // 'light' — секция всегда светлая (services/work/process/gifts не меняются темой)
+  const mode = opts.mode || "auto";
 
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   let W = 0;
@@ -801,12 +805,12 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
   let stars = [];
 
   function sizeStars() {
-    W = hero.clientWidth;
-    H = hero.clientHeight;
+    W = host.clientWidth;
+    H = host.clientHeight;
     canvas.width = Math.floor(W * dpr);
     canvas.height = Math.floor(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = Math.floor(W * H * 0.00006);
+    const count = Math.floor(W * H * density);
     stars = [];
     for (let i = 0; i < count; i++) {
       stars.push({
@@ -822,6 +826,12 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
     }
   }
   sizeStars();
+  // Защита от гонки: если при первом расчёте layout ещё не устоялся (0-й/крошечный
+  // размер), пересчитываем после следующего кадра — иначе canvas на всю жизнь
+  // страницы останется мизерным, а событие resize может больше не наступить.
+  requestAnimationFrame(() => {
+    if (host.clientWidth > W + 5 || host.clientHeight > H + 5) sizeStars();
+  });
   window.addEventListener("resize", sizeStars);
 
   let running = false;
@@ -831,16 +841,19 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
     rafId = requestAnimationFrame(frame);
     ctx.clearRect(0, 0, W, H);
 
-    const bright = hero.classList.contains("is-bright");
-    const pulse = bright
-      ? Math.sin(t * 0.0008) * 0.07 + 0.2
-      : Math.sin(t * 0.0008) * 0.05 + 0.12;
-    const g = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.7);
-    g.addColorStop(0, "rgba(201, 162, 39, " + pulse + ")");
-    g.addColorStop(1, "rgba(201, 162, 39, 0)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, W, H);
+    const isLight = mode === "light" || document.documentElement.classList.contains("theme-light");
 
+    if (glow) {
+      const pulse = Math.sin(t * 0.0008) * 0.05 + (isLight ? 0.09 : 0.12);
+      const g = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.7);
+      g.addColorStop(0, "rgba(201, 162, 39, " + pulse + ")");
+      g.addColorStop(1, "rgba(201, 162, 39, 0)");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    const dust = isLight ? "#1C3A70" : "#F7F4EE";
+    const dustAlpha = isLight ? 0.5 : 1;
     for (const s of stars) {
       s.x += s.vx;
       s.y += s.vy;
@@ -849,8 +862,8 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
       if (s.y < 0) s.y = H;
       if (s.y > H) s.y = 0;
       const tw = Math.sin(t * 0.002 + s.phase) * 0.5 + 0.5;
-      ctx.globalAlpha = Math.min(1, s.alpha * (0.3 + 0.7 * tw) * (bright ? 1.7 : 1));
-      ctx.fillStyle = s.gold ? "#D9B545" : "#F7F4EE";
+      ctx.globalAlpha = Math.min(1, s.alpha * (0.3 + 0.7 * tw) * (s.gold ? 1 : dustAlpha));
+      ctx.fillStyle = s.gold ? "#D9B545" : dust;
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
       ctx.fill();
@@ -867,5 +880,13 @@ document.querySelectorAll(".freveal").forEach((t) => io.observe(t));
       running = false;
       cancelAnimationFrame(rafId);
     }
-  }).observe(hero);
-})();
+  }).observe(host);
+}
+
+startStarfield(document.getElementById("hero-stars"), document.querySelector(".hero"), { glow: true, mode: "auto", density: 0.00006 });
+startStarfield(document.getElementById("stars-configurator"), document.querySelector(".configurator"), { mode: "auto", density: 0.00004 });
+startStarfield(document.getElementById("stars-footer"), document.querySelector(".footer-shell"), { mode: "auto", density: 0.00004 });
+startStarfield(document.getElementById("stars-services"), document.querySelector(".services"), { mode: "light", density: 0.00004 });
+startStarfield(document.getElementById("stars-work"), document.querySelector(".work"), { mode: "light", density: 0.00004 });
+startStarfield(document.getElementById("stars-gifts"), document.querySelector(".gifts"), { mode: "light", density: 0.00004 });
+startStarfield(document.getElementById("stars-process"), document.querySelector(".process"), { mode: "light", density: 0.00004 });
