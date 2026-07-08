@@ -115,7 +115,9 @@
       "cfg.days_prefix": "Tayyor bo'ladi:",
       "cfg.currency": "so'm",
       "cfg.send": "Arizani Telegramga yuborish",
-      "cfg.contact_ph": "Telefon yoki @username (ixtiyoriy)",
+      "cfg.contact_ph": "Telefon yoki @username",
+      "cfg.email_ph": "Email (ixtiyoriy)",
+      "cfg.contact_required": "Telefon yoki @username kiriting — aks holda siz bilan bog'lana olmaymiz",
       "cfg.note": "Ariza nusxalanadi — uni chatga qo'ying. Bu hali to'lov emas: avval tafsilotlarni muhokama qilamiz.",
 
       "gifts.title": "Bu doim ichida",
@@ -270,7 +272,9 @@
       "cfg.days_prefix": "Готово за",
       "cfg.currency": "сум",
       "cfg.send": "Отправить заявку в Telegram",
-      "cfg.contact_ph": "Телефон или @username (необязательно)",
+      "cfg.contact_ph": "Телефон или @username",
+      "cfg.email_ph": "Email (необязательно)",
+      "cfg.contact_required": "Укажите телефон или @username — иначе мы не сможем с вами связаться",
       "cfg.note": "Заявка скопируется — просто вставьте её в чат. Это ещё не оплата: сначала обсудим детали.",
 
       "gifts.title": "Это входит всегда",

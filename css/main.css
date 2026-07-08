@@ -7,6 +7,9 @@
   /* тёмный оттенок золота для ТЕКСТА на светлом фоне — обычный --gold/--gold-soft
      даёт контраст ~2:1 на песке (не читается), --gold-ink даёт ~4.6:1 (WCAG AA) */
   --gold-ink: #8A6A14;
+  /* ошибки валидации: яркий на тёмном фоне, тёмный на светлом (тот же приём, что и с --gold-ink) */
+  --danger: #FF6B6B;
+  --danger-ink: #B3261E;
   --sand: #F7F4EE;
   --ink: #101828;
   --mist: #8FA3C8;
@@ -558,6 +561,15 @@ section { padding: var(--pad-section) var(--pad-x); scroll-margin-top: 64px; }
 }
 .cfg-contact::placeholder { color: rgba(143, 163, 200, 0.7); }
 .cfg-contact:focus { outline: none; border-color: var(--gold); }
+.cfg-contact.is-invalid { border-color: var(--danger); }
+
+.cfg-error {
+  font-size: 0.82rem;
+  color: var(--danger);
+  margin: -4px 0 12px;
+}
+html.theme-light .cfg-error { color: var(--danger-ink); }
+html.theme-light .cfg-contact.is-invalid { border-color: var(--danger-ink); }
 
 .cfg-hp {
   position: absolute;

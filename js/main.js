@@ -118,9 +118,8 @@ const UI = {
     sending: "Yuborilmoqda…",
     sent: "Ariza yuborildi ✓ Tez orada bog'lanamiz",
     sendErr: "Yuborilmadi — chatga qo'lda yuboring",
-    contactPh: "Telefon yoki @username (ixtiyoriy)",
     orderTitle: "Silkway saytidan ariza",
-    fService: "Xizmat", fOptions: "Opsiyalar", fUrgentYes: "Shoshilinch: ha",
+    fService: "Xizmat", fOptions: "Opsiyalar", fUrgentYes: "Shoshilinch: ha", fContact: "Aloqa",
     fCalc: "Hisob", fSum: "so'm", fTerm: "muddat",
     basePkg: (n) => "«" + n + "» asosiy paketi",
     urgentItem: "Shoshilinch bajarish",
@@ -132,9 +131,8 @@ const UI = {
     sending: "Отправляем…",
     sent: "Заявка отправлена ✓ Скоро свяжемся",
     sendErr: "Не отправилось — вставьте в чат вручную",
-    contactPh: "Телефон или @username (необязательно)",
     orderTitle: "Заявка с сайта Silkway",
-    fService: "Услуга", fOptions: "Опции", fUrgentYes: "Срочно: да",
+    fService: "Услуга", fOptions: "Опции", fUrgentYes: "Срочно: да", fContact: "Связь",
     fCalc: "Расчёт", fSum: "сум", fTerm: "срок",
     basePkg: (n) => "Базовый пакет «" + n + "»",
     urgentItem: "Срочное выполнение",
@@ -155,7 +153,9 @@ const el = {
   summary: document.getElementById("cfg-summary"),
   send: document.getElementById("cfg-send"),
   contact: document.getElementById("cfg-contact"),
+  email: document.getElementById("cfg-email"),
   website: document.getElementById("cfg-hp"),
+  error: document.getElementById("cfg-error"),
 };
 
 function renderChips() {
@@ -277,13 +277,25 @@ function renderTotal() {
 function buildOrderText() {
   const { svc, price, daysText, chosen } = calc();
   const u = ui();
+  const contact = el.contact ? el.contact.value.trim() : "";
+  const email = el.email ? el.email.value.trim() : "";
   return [
     u.orderTitle,
     u.fService + ": " + svc.name[L()],
     ...(chosen.length ? [u.fOptions + ": " + chosen.join(", ")] : []),
     ...(state.urgent ? [u.fUrgentYes] : []),
     u.fCalc + ": " + fmt(price) + " " + u.fSum + ", " + u.fTerm + ": " + daysText,
+    ...(contact ? [u.fContact + ": " + contact] : []),
+    ...(email ? ["Email: " + email] : []),
   ].join("\n");
+}
+
+function validateContact() {
+  const ok = !!(el.contact && el.contact.value.trim());
+  if (el.contact) el.contact.classList.toggle("is-invalid", !ok);
+  if (el.error) el.error.hidden = ok;
+  if (!ok && el.contact) el.contact.focus();
+  return ok;
 }
 
 el.urgent.addEventListener("change", () => {
@@ -308,6 +320,7 @@ async function sendToApi() {
         options: [...state.options],
         urgent: state.urgent,
         contact: el.contact ? el.contact.value.trim() : "",
+        email: el.email ? el.email.value.trim() : "",
         website: el.website ? el.website.value : "", // honeypot — должно быть пустым
       }),
     });
@@ -315,6 +328,7 @@ async function sendToApi() {
     await res.json();
     el.send.textContent = ui().sent;
     if (el.contact) el.contact.value = "";
+    if (el.email) el.email.value = "";
     setTimeout(() => { el.send.textContent = ui().send; }, 5000);
   } catch (e) {
     // бэкенд недоступен — не теряем заявку: копируем и открываем Telegram
@@ -326,12 +340,23 @@ async function sendToApi() {
 }
 
 el.send.addEventListener("click", (e) => {
+  if (!validateContact()) {
+    e.preventDefault();
+    return;
+  }
   if (ORDER_API) {
     e.preventDefault();
     sendToApi();
   } else {
     // автономный режим: пусть ссылка откроет Telegram, а мы скопируем текст
     fallbackCopy();
+  }
+});
+
+el.contact.addEventListener("input", () => {
+  if (el.contact.value.trim()) {
+    el.contact.classList.remove("is-invalid");
+    if (el.error) el.error.hidden = true;
   }
 });
 

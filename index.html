@@ -273,7 +273,9 @@
       <p class="cfg-total-price"><span id="cfg-price">2 500 000</span> <span data-i18n="cfg.currency">so'm</span></p>
       <p class="cfg-total-days"><span data-i18n="cfg.days_prefix">Tayyor bo'ladi:</span> <span id="cfg-days">5 kun</span></p>
       <ul class="cfg-total-list" id="cfg-summary"></ul>
-      <input class="cfg-contact" id="cfg-contact" type="text" autocomplete="tel" data-i18n-attr="placeholder:cfg.contact_ph" placeholder="Telefon yoki @username (ixtiyoriy)">
+      <input class="cfg-contact" id="cfg-contact" type="text" autocomplete="tel" required aria-required="true" data-i18n-attr="placeholder:cfg.contact_ph" placeholder="Telefon yoki @username">
+      <input class="cfg-contact" id="cfg-email" type="email" autocomplete="email" data-i18n-attr="placeholder:cfg.email_ph" placeholder="Email (ixtiyoriy)">
+      <p class="cfg-error" id="cfg-error" data-i18n="cfg.contact_required" hidden>Telefon yoki @username kiriting — aks holda siz bilan bog'lana olmaymiz</p>
       <input class="cfg-hp" id="cfg-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" name="cfg_hp">
       <a class="btn btn-gold btn-wide" id="cfg-send" href="https://t.me/mmike202" target="_blank" rel="noopener" data-i18n="cfg.send">Arizani Telegramga yuborish</a>
       <p class="cfg-note" data-i18n="cfg.note">Ariza nusxalanadi — uni chatga qo'ying. Bu hali to'lov emas: avval tafsilotlarni muhokama qilamiz.</p>
