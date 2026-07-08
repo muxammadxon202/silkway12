@@ -179,6 +179,10 @@ html.theme-light .cfg-total-days,
 html.theme-light .cfg-total-list,
 html.theme-light .cfg-note { color: #4A5468; }
 html.theme-light .cfg-chip { color: #4A5468; border-color: rgba(28, 58, 112, 0.22); }
+html.theme-light .cfg-chip.is-active { color: var(--night); }
+html.theme-light .cfg-total-price { color: var(--gold-ink); }
+html.theme-light .lang-btn:not(.is-active) { color: #4A5468; border-color: rgba(28, 58, 112, 0.22); }
+html.theme-light .hero-title em .w { color: var(--gold-ink); }
 html.theme-light .cfg-opt { background: var(--white); border-color: rgba(28, 58, 112, 0.14); }
 html.theme-light .cfg-total { background: var(--white); }
 html.theme-light .cfg-total-title { color: var(--lapis); }
@@ -410,7 +414,7 @@ section { padding: var(--pad-section) var(--pad-x); scroll-margin-top: 64px; }
   margin-bottom: 18px;
 }
 .stop-price { font-family: var(--font-mono); font-weight: 500; font-size: 1.02rem; color: var(--lapis); }
-.stop-days { font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold); }
+.stop-days { font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold-ink); }
 
 .svc-ico {
   display: inline-flex;
@@ -618,7 +622,7 @@ section { padding: var(--pad-section) var(--pad-x); scroll-margin-top: 64px; }
   font-size: 0.75rem !important;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold) !important;
+  color: var(--gold-ink) !important;
 }
 
 /* ---------- process ---------- */
@@ -920,10 +924,10 @@ html.intro-lock, html.intro-lock body { overflow: hidden; }
 
 .stop-market {
   font-size: 0.78rem;
-  color: #8A93A6;
+  color: #5A6478;
   margin: -8px 0 18px;
 }
-.stop-market::before { content: "⌖ "; color: var(--gold); }
+.stop-market::before { content: "⌖ "; color: var(--gold-ink); }
 
 /* ---------- tilt + spotlight cards ---------- */
 
