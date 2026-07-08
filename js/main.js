@@ -102,7 +102,6 @@ const SERVICES = {
   },
 };
 
-const TG_URL = "https://t.me/silkway12";
 // Адрес бэкенда бота. Пусто = автономный режим (копия в буфер + Telegram).
 // Задеплоено на VPS 45.130.148.155, HTTPS через Caddy.
 const ORDER_API = "https://api.silkway12.uz";
@@ -321,7 +320,7 @@ async function sendToApi() {
     // бэкенд недоступен — не теряем заявку: копируем и открываем Telegram
     if (navigator.clipboard) navigator.clipboard.writeText(buildOrderText()).catch(() => {});
     el.send.textContent = ui().sendErr;
-    window.open("https://t.me/silkway12", "_blank", "noopener");
+    window.open("https://t.me/mmike202", "_blank", "noopener");
     setTimeout(() => { el.send.textContent = ui().send; }, 5000);
   }
 }
