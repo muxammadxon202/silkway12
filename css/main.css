@@ -792,7 +792,22 @@ html.theme-light .cfg-contact.is-invalid { border-color: var(--danger-ink); }
   transition: opacity 0.65s ease;
 }
 #intro.intro-out { opacity: 0; pointer-events: none; }
-#intro canvas { width: 100%; height: 100%; display: block; }
+#intro canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+#intro-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 6vw, 3.4rem);
+  letter-spacing: 0.08em;
+  color: var(--sand);
+  text-align: center;
+  padding: 0 20px;
+  min-height: 1.2em;
+  text-shadow: 0 0 24px rgba(14, 31, 66, 0.9);
+}
+#intro-title .dud { color: var(--gold-soft); opacity: 0.85; }
 
 .intro-hint {
   position: absolute;
