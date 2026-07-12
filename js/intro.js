@@ -149,8 +149,7 @@
   async function runTitle() {
     for (let i = 0; i < PHRASES.length && !done; i++) {
       await scramble(titleEl, PHRASES[i]);
-      await new Promise((r) => setTimeout(r, 550));
-    }
+await new Promise((r) => setTimeout(r, 3000));    }
     finish();
   }
 
@@ -180,7 +179,7 @@
       last = performance.now();
       requestAnimationFrame(frame);
       runTitle();
-      setTimeout(finish, 4000); // страховка
+      setTimeout(finish, 6000); // страховка
     });
   });
 })();
