@@ -149,7 +149,8 @@
   async function runTitle() {
     for (let i = 0; i < PHRASES.length && !done; i++) {
       await scramble(titleEl, PHRASES[i]);
-await new Promise((r) => setTimeout(r, 3000));    }
+      await new Promise((r) => setTimeout(r, 3000));
+    }
     finish();
   }
 
