@@ -32,10 +32,6 @@
       "hero.fact2b": "barchasi tayyor holda",
       "hero.fact3a": "1 chat",
       "hero.fact3b": "butun jarayon Telegramda",
-      "hero.fact4a": "10+ kompaniya",
-      "hero.fact4b": "optimallashtirildi",
-      "hero.fact5a": "30+ bot va loyiha",
-      "hero.fact5b": "hozir ishlab turibdi",
 
       "sv.title": "O'nta xizmat",
       "sv.lead": "Har bir xizmat — tayyor paket: nima kirishi, qancha turishi va qachon tayyor bo'lishi ma'lum.",
@@ -201,10 +197,6 @@
       "hero.fact2b": "всё под ключ",
       "hero.fact3a": "1 чат",
       "hero.fact3b": "весь процесс в Telegram",
-      "hero.fact4a": "10+ компаний",
-      "hero.fact4b": "оптимизировано",
-      "hero.fact5a": "30+ ботов и проектов",
-      "hero.fact5b": "работают сейчас",
 
       "sv.title": "Десять услуг",
       "sv.lead": "Каждая услуга — готовый пакет: известно, что входит, сколько стоит и когда будет готово.",

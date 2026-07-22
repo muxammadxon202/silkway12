@@ -125,10 +125,10 @@ const L = () => (window.SILKWAY_LANG === "ru" ? "ru" : "uz");
 const UI = {
   uz: {
     send: "Arizani Telegramga yuborish",
-    copied: "Ariza nusxalandi — chatga qo'ying",
+    copied: "Telegram ochildi — «Yuborish»ni bosing",
     sending: "Yuborilmoqda…",
     sent: "Ariza yuborildi ✓ Tez orada bog'lanamiz",
-    sendErr: "Yuborilmadi — chatga qo'lda yuboring",
+    sendErr: "Telegram ochildi — «Yuborish»ni bosing",
     orderTitle: "Silkway saytidan ariza",
     fService: "Xizmat", fOptions: "Opsiyalar", fUrgentYes: "Shoshilinch: ha", fContact: "Aloqa",
     fCalc: "Hisob", fSum: "so'm", fTerm: "muddat",
@@ -138,10 +138,10 @@ const UI = {
   },
   ru: {
     send: "Отправить заявку в Telegram",
-    copied: "Заявка скопирована — вставьте в чат",
+    copied: "Открыт Telegram — нажмите «Отправить»",
     sending: "Отправляем…",
     sent: "Заявка отправлена ✓ Скоро свяжемся",
-    sendErr: "Не отправилось — вставьте в чат вручную",
+    sendErr: "Открыт Telegram — нажмите «Отправить»",
     orderTitle: "Заявка с сайта Silkway",
     fService: "Услуга", fOptions: "Опции", fUrgentYes: "Срочно: да", fContact: "Связь",
     fCalc: "Расчёт", fSum: "сум", fTerm: "срок",
@@ -418,9 +418,13 @@ el.urgent.addEventListener("change", () => {
 });
 
 function fallbackCopy() {
-  if (navigator.clipboard) navigator.clipboard.writeText(buildOrderText()).catch(() => {});
+  const text = buildOrderText();
+  // Резервный клипборд — на случай если у клиента старая версия Telegram
+  // без поддержки ?text= в диплинке.
+  if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+  window.open("https://t.me/mmike202?text=" + encodeURIComponent(text), "_blank", "noopener");
   el.send.textContent = ui().copied;
-  setTimeout(() => { el.send.textContent = ui().send; }, 4000);
+  setTimeout(() => { el.send.textContent = ui().send; }, 5000);
 }
 
 async function sendToApi() {
@@ -445,10 +449,12 @@ async function sendToApi() {
     if (el.email) el.email.value = "";
     setTimeout(() => { el.send.textContent = ui().send; }, 5000);
   } catch (e) {
-    // бэкенд недоступен — не теряем заявку: копируем и открываем Telegram
-    if (navigator.clipboard) navigator.clipboard.writeText(buildOrderText()).catch(() => {});
+    // бэкенд недоступен — не теряем заявку: открываем Telegram с уже
+    // готовым текстом (клиенту остаётся один тап «Отправить», без вставки)
+    const text = buildOrderText();
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
     el.send.textContent = ui().sendErr;
-    window.open("https://t.me/mmike202", "_blank", "noopener");
+    window.open("https://t.me/mmike202?text=" + encodeURIComponent(text), "_blank", "noopener");
     setTimeout(() => { el.send.textContent = ui().send; }, 5000);
   }
 }
