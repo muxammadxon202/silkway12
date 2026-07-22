@@ -2,6 +2,7 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.silkway12.uz; base-uri 'self'; object-src 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="meta.title">Silkway Web Company — saytlar, botlar va do'konlar tayyor holda</title>
 <meta name="description" data-i18n-attr="content:meta.desc" content="Silkway Web Company: lendinglar, saytlar, Telegram-botlar, to'y taklifnomalari va onlayn do'konlar tayyor holda. Belgilangan narx va muddat. Samarqand, O'zbekiston.">
@@ -10,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
-<script>try{if(localStorage.getItem('silkway_theme')==='light')document.documentElement.classList.add('theme-light');}catch(e){}</script>
+<script src="js/theme-init.js"></script>
 </head>
 <body>
 
@@ -310,8 +311,8 @@
       <input class="cfg-contact" id="cfg-email" type="email" autocomplete="email" data-i18n-attr="placeholder:cfg.email_ph" placeholder="Email (ixtiyoriy)">
       <p class="cfg-error" id="cfg-error" data-i18n="cfg.contact_required" hidden>Telefon yoki @username kiriting — aks holda siz bilan bog'lana olmaymiz</p>
       <input class="cfg-hp" id="cfg-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" name="cfg_hp">
-      <a class="btn btn-gold btn-wide" id="cfg-send" href="https://t.me/mmike202" target="_blank" rel="noopener" data-i18n="cfg.send">Arizani Telegramga yuborish</a>
-      <p class="cfg-note" data-i18n="cfg.note">Ariza nusxalanadi — uni chatga qo'ying. Bu hali to'lov emas: avval tafsilotlarni muhokama qilamiz.</p>
+      <a class="btn btn-gold btn-wide" id="cfg-send" href="https://t.me/mmike202" target="_blank" rel="noopener noreferrer" data-i18n="cfg.send">Arizani Telegramga yuborish</a>
+      <p class="cfg-note" data-i18n="cfg.note">Ariza to'g'ridan-to'g'ri bizga Telegram orqali boradi. Bu hali to'lov emas: avval tafsilotlarni muhokama qilamiz.</p>
     </aside>
   </div>
 </section>
@@ -353,7 +354,7 @@
       <h3>Mir Orexov</h3>
       <p data-i18n="work.w1p">Yong'oq sotuvchisi uchun sayt va buyurtmalar paneli: katalog, arizalar qabuli, admin.</p>
       <p class="work-tag" data-i18n="work.w1tag">Sayt + admin-panel</p>
-      <a class="work-link" href="https://muxammadxon202.github.io/mir-orexov/" target="_blank" rel="noopener">
+      <a class="work-link" href="https://muxammadxon202.github.io/mir-orexov/" target="_blank" rel="noopener noreferrer">
         <span data-i18n="work.w1link">Saytni ochish</span>
         <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -437,7 +438,7 @@
       <nav class="footer-col freveal" aria-label="Aloqa" data-i18n-attr="aria-label:foot.aria_contact">
         <h3 data-i18n="foot.col_contact">Aloqa</h3>
         <ul>
-          <li><a href="https://t.me/mmike202" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="https://t.me/mmike202" target="_blank" rel="noopener noreferrer">Telegram</a></li>
           <li><a href="#configurator" data-i18n="foot.link_order">Ariza qoldirish</a></li>
         </ul>
       </nav>
@@ -447,7 +448,7 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/intro.js"></script>
-<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script src="js/vendor/three.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -114,7 +114,6 @@ const SERVICES = {
 };
 
 // Адрес бэкенда бота. Пусто = автономный режим (копия в буфер + Telegram).
-// Задеплоено на VPS 45.130.148.155, HTTPS через Caddy.
 const ORDER_API = "https://api.silkway12.uz";
 
 const state = { service: "landing", options: new Set(), urgent: false };
@@ -405,7 +404,11 @@ function buildOrderText() {
 }
 
 function validateContact() {
-  const ok = !!(el.contact && el.contact.value.trim());
+  const v = el.contact ? el.contact.value.trim() : "";
+  const isUsername = /^@[a-zA-Z0-9_]{4,32}$/.test(v);
+  const digitCount = (v.match(/\d/g) || []).length;
+  const isPhone = /^[+\d][\d\s\-()]{5,}$/.test(v) && digitCount >= 7;
+  const ok = isUsername || isPhone;
   if (el.contact) el.contact.classList.toggle("is-invalid", !ok);
   if (el.error) el.error.hidden = ok;
   if (!ok && el.contact) el.contact.focus();

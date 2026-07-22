@@ -125,7 +125,7 @@
       "cfg.contact_ph": "Telefon yoki @username",
       "cfg.email_ph": "Email (ixtiyoriy)",
       "cfg.contact_required": "Telefon yoki @username kiriting — aks holda siz bilan bog'lana olmaymiz",
-      "cfg.note": "Ariza nusxalanadi — uni chatga qo'ying. Bu hali to'lov emas: avval tafsilotlarni muhokama qilamiz.",
+      "cfg.note": "Ariza to'g'ridan-to'g'ri bizga Telegram orqali boradi. Bu hali to'lov emas: avval tafsilotlarni muhokama qilamiz.",
 
       "gifts.title": "Bu doim ichida",
       "gifts.lead": "Opsiya ham, qo'shimcha to'lov ham emas — biz har bir buyurtma bilan shunday ishlaymiz.",
@@ -290,7 +290,7 @@
       "cfg.contact_ph": "Телефон или @username",
       "cfg.email_ph": "Email (необязательно)",
       "cfg.contact_required": "Укажите телефон или @username — иначе мы не сможем с вами связаться",
-      "cfg.note": "Заявка скопируется — просто вставьте её в чат. Это ещё не оплата: сначала обсудим детали.",
+      "cfg.note": "Заявка уходит нам напрямую в Telegram. Это ещё не оплата: сначала обсудим детали.",
 
       "gifts.title": "Это входит всегда",
       "gifts.lead": "Не опции и не доплаты — так мы работаем с каждым заказом.",
