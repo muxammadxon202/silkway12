@@ -734,6 +734,22 @@ html.theme-light .cfg-contact.is-invalid { border-color: var(--danger-ink); }
   color: var(--gold-ink) !important;
 }
 
+.work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--lapis);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+}
+.work-link svg { transition: transform 0.2s ease; }
+.work-link:hover { color: var(--gold-ink); border-color: currentColor; gap: 9px; }
+.work-link:hover svg { transform: translate(1px, -1px); }
+
 /* ---------- process ---------- */
 
 .process { background: var(--white); }

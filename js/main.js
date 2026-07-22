@@ -165,7 +165,7 @@ const CURRENCIES = {
   AZN: { flag: "brand/flags/az.svg", rateToUZS: 7450 },
 };
 const CUR_KEY = "silkway_currency";
-const currency = { code: "USD" };
+const currency = { code: "UZS" };
 try {
   const saved = localStorage.getItem(CUR_KEY);
   if (saved && CURRENCIES[saved]) currency.code = saved;

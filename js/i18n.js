@@ -143,9 +143,10 @@
       "gifts.g4p": "Ish vaqtida Telegramda ko'pi bilan bir soatda javob beramiz.",
 
       "work.title": "Qilingan va ishlayapti",
-      "work.lead": "Maketlar emas, tirik loyihalar — oching va o'zingiz sinab ko'ring.",
+      "work.lead": "Maketlar emas, tirik loyihalar.",
       "work.w1p": "Yong'oq sotuvchisi uchun sayt va buyurtmalar paneli: katalog, arizalar qabuli, admin.",
       "work.w1tag": "Sayt + admin-panel",
+      "work.w1link": "Saytni ochish",
       "work.w2h": "To'y taklifnomasi",
       "work.w2p": "Ikki tilli taklifnoma-sayt: mehmonlarga shaxsiy havolalar, javoblar Telegramda.",
       "work.w2tag": "Taklifnoma UZ/RU",
@@ -311,9 +312,10 @@
       "gifts.g4p": "В рабочее время отвечаем в Telegram максимум за час.",
 
       "work.title": "Сделано и работает",
-      "work.lead": "Не макеты, а живые проекты — откройте и попробуйте сами.",
+      "work.lead": "Не макеты, а живые проекты.",
       "work.w1p": "Сайт и панель заказов для продавца орехов: каталог, приём заявок, админка.",
       "work.w1tag": "Сайт + админ-панель",
+      "work.w1link": "Открыть сайт",
       "work.w2h": "Свадебное приглашение",
       "work.w2p": "Двуязычный сайт-приглашение: личные ссылки гостям, ответы в Telegram.",
       "work.w2tag": "Приглашение RU/UZ",
