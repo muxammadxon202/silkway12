@@ -37,15 +37,16 @@
   </div>
   <div class="currency-switch" id="currency-switch">
     <button class="currency-btn" id="currency-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
-      <span class="cur-flag" id="currency-flag">🇺🇸</span><span class="cur-code" id="currency-code">USD</span>
+      <img class="cur-flag" id="currency-flag" src="brand/flags/us.svg" alt="" width="20" height="14">
+      <span class="cur-code" id="currency-code">USD</span>
       <svg class="cur-chevron" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <ul class="currency-menu" id="currency-menu" role="listbox">
-      <li role="option" data-currency="USD" aria-selected="true"><span class="cur-flag">🇺🇸</span><span>USD</span></li>
-      <li role="option" data-currency="UZS" aria-selected="false"><span class="cur-flag">🇺🇿</span><span>UZS</span></li>
-      <li role="option" data-currency="RUB" aria-selected="false"><span class="cur-flag">🇷🇺</span><span>RUB</span></li>
-      <li role="option" data-currency="TRY" aria-selected="false"><span class="cur-flag">🇹🇷</span><span>TRY</span></li>
-      <li role="option" data-currency="AZN" aria-selected="false"><span class="cur-flag">🇦🇿</span><span>AZN</span></li>
+      <li role="option" data-currency="USD" aria-selected="true"><img class="cur-flag" src="brand/flags/us.svg" alt="" width="20" height="14"><span>USD</span></li>
+      <li role="option" data-currency="UZS" aria-selected="false"><img class="cur-flag" src="brand/flags/uz.svg" alt="" width="20" height="14"><span>UZS</span></li>
+      <li role="option" data-currency="RUB" aria-selected="false"><img class="cur-flag" src="brand/flags/ru.svg" alt="" width="20" height="14"><span>RUB</span></li>
+      <li role="option" data-currency="TRY" aria-selected="false"><img class="cur-flag" src="brand/flags/tr.svg" alt="" width="20" height="14"><span>TRY</span></li>
+      <li role="option" data-currency="AZN" aria-selected="false"><img class="cur-flag" src="brand/flags/az.svg" alt="" width="20" height="14"><span>AZN</span></li>
     </ul>
   </div>
   <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Тема: день / ночь" aria-pressed="false">

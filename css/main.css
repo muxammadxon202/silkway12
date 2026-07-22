@@ -152,9 +152,13 @@ a { color: inherit; }
 }
 .currency-btn:hover, .currency-switch.is-open .currency-btn { border-color: var(--gold); color: var(--gold-soft); }
 .cur-flag {
-  font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", "Twemoji Mozilla", sans-serif;
-  font-size: 0.95rem;
-  line-height: 1;
+  display: block;
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+  flex: none;
 }
 .cur-chevron { transition: transform 0.25s ease; flex: none; }
 .currency-switch.is-open .cur-chevron { transform: rotate(180deg); }
@@ -196,7 +200,7 @@ a { color: inherit; }
 }
 .currency-menu li:hover { background: rgba(201, 162, 39, 0.12); color: var(--sand); }
 .currency-menu li[aria-selected="true"] { background: var(--gold); color: var(--night); font-weight: 500; }
-.currency-menu li .cur-flag { font-size: 1rem; }
+.currency-menu li .cur-flag { width: 22px; height: 15px; }
 
 html.theme-light .currency-btn { color: #4A5468; border-color: rgba(28, 58, 112, 0.22); }
 html.theme-light .currency-btn:hover,

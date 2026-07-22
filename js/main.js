@@ -158,11 +158,11 @@ const fmt = (n) => n.toLocaleString("ru-RU").replace(/,/g, " ");
 // Курсы фиксированные (сум за 1 единицу валюты) — сайт статический, без
 // живого API форекса. Обновлять вручную по мере надобности.
 const CURRENCIES = {
-  USD: { flag: "🇺🇸", rateToUZS: 12700 },
-  UZS: { flag: "🇺🇿", rateToUZS: 1 },
-  RUB: { flag: "🇷🇺", rateToUZS: 140 },
-  TRY: { flag: "🇹🇷", rateToUZS: 370 },
-  AZN: { flag: "🇦🇿", rateToUZS: 7450 },
+  USD: { flag: "brand/flags/us.svg", rateToUZS: 12700 },
+  UZS: { flag: "brand/flags/uz.svg", rateToUZS: 1 },
+  RUB: { flag: "brand/flags/ru.svg", rateToUZS: 140 },
+  TRY: { flag: "brand/flags/tr.svg", rateToUZS: 370 },
+  AZN: { flag: "brand/flags/az.svg", rateToUZS: 7450 },
 };
 const CUR_KEY = "silkway_currency";
 const currency = { code: "USD" };
@@ -212,7 +212,7 @@ function setCurrency(code) {
   if (!CURRENCIES[code] || code === currency.code) return;
   currency.code = code;
   try { localStorage.setItem(CUR_KEY, code); } catch (e) {}
-  document.getElementById("currency-flag").textContent = CURRENCIES[code].flag;
+  document.getElementById("currency-flag").src = CURRENCIES[code].flag;
   document.getElementById("currency-code").textContent = code;
   document.querySelectorAll("#currency-menu li").forEach((li) => {
     li.setAttribute("aria-selected", li.dataset.currency === code ? "true" : "false");
@@ -229,7 +229,7 @@ function setCurrency(code) {
   const menu = document.getElementById("currency-menu");
   if (!wrap || !btn || !menu) return;
 
-  document.getElementById("currency-flag").textContent = CURRENCIES[currency.code].flag;
+  document.getElementById("currency-flag").src = CURRENCIES[currency.code].flag;
   document.getElementById("currency-code").textContent = currency.code;
   menu.querySelectorAll("li").forEach((li) => {
     li.setAttribute("aria-selected", li.dataset.currency === currency.code ? "true" : "false");
