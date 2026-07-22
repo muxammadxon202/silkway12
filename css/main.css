@@ -151,7 +151,11 @@ a { color: inherit; }
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .currency-btn:hover, .currency-switch.is-open .currency-btn { border-color: var(--gold); color: var(--gold-soft); }
-.cur-flag { font-size: 0.95rem; line-height: 1; }
+.cur-flag {
+  font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", "Twemoji Mozilla", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1;
+}
 .cur-chevron { transition: transform 0.25s ease; flex: none; }
 .currency-switch.is-open .cur-chevron { transform: rotate(180deg); }
 
