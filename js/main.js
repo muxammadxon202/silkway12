@@ -1,103 +1,114 @@
 const SERVICES = {
   landing: {
     name: { uz: "Lending", ru: "Лендинг" },
-    base: 2500000,
+    base: 3000000,
     days: 5,
     options: [
-      { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 300000 },
-      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 400000 },
-      { id: "pay", name: { uz: "Click / Payme to'lovini qabul qilish", ru: "Приём оплаты Click / Payme" }, price: 500000 },
-      { id: "seo", name: { uz: "SEO-asos va analitika ulash", ru: "SEO-база и подключение аналитики" }, price: 250000 },
-      { id: "host", name: { uz: "Hosting va .uz domeni bir yilga", ru: "Хостинг и домен .uz на год" }, price: 700000 },
+      { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 360000 },
+      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 480000 },
+      { id: "pay", name: { uz: "Click / Payme to'lovini qabul qilish", ru: "Приём оплаты Click / Payme" }, price: 600000 },
+      { id: "seo", name: { uz: "SEO-asos va analitika ulash", ru: "SEO-база и подключение аналитики" }, price: 300000 },
+      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 840000 },
     ],
   },
   site: {
     name: { uz: "Kompaniya sayti", ru: "Сайт компании" },
-    base: 4500000,
+    base: 5400000,
     days: 10,
     options: [
-      { id: "admin", name: { uz: "Admin-panel — kontentni o'zingiz o'zgartirasiz", ru: "Админ-панель — сами меняете контент" }, price: 1500000 },
-      { id: "blog", name: { uz: "Yangiliklar yoki blog bo'limi", ru: "Раздел новостей или блога" }, price: 500000 },
-      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 600000 },
-      { id: "tg", name: { uz: "Saytdan arizalar Telegramga", ru: "Заявки с сайта в Telegram" }, price: 400000 },
-      { id: "crm", name: { uz: "CRM bilan integratsiya", ru: "Интеграция с CRM" }, price: 2500000 },
-      { id: "host", name: { uz: "Hosting va .uz domeni bir yilga", ru: "Хостинг и домен .uz на год" }, price: 700000 },
+      { id: "admin", name: { uz: "Admin-panel — kontentni o'zingiz o'zgartirasiz", ru: "Админ-панель — сами меняете контент" }, price: 1800000 },
+      { id: "blog", name: { uz: "Yangiliklar yoki blog bo'limi", ru: "Раздел новостей или блога" }, price: 600000 },
+      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 720000 },
+      { id: "tg", name: { uz: "Saytdan arizalar Telegramga", ru: "Заявки с сайта в Telegram" }, price: 480000 },
+      { id: "crm", name: { uz: "CRM bilan integratsiya", ru: "Интеграция с CRM" }, price: 3000000 },
+      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 840000 },
     ],
   },
   bot: {
     name: { uz: "Telegram-bot", ru: "Telegram-бот" },
-    base: 2500000,
+    base: 3000000,
     days: 7,
     options: [
-      { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 700000 },
-      { id: "admin", name: { uz: "Botni boshqarish uchun admin-panel", ru: "Админ-панель для управления ботом" }, price: 800000 },
-      { id: "mail", name: { uz: "Mijozlar bazasi bo'yicha tarqatmalar", ru: "Рассылки по базе клиентов" }, price: 400000 },
-      { id: "site", name: { uz: "Saytingiz bilan integratsiya", ru: "Интеграция с вашим сайтом" }, price: 500000 },
-      { id: "host", name: { uz: "Server va bot ishi bir yilga", ru: "Сервер и работа бота на год" }, price: 600000 },
+      { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 840000 },
+      { id: "admin", name: { uz: "Botni boshqarish uchun admin-panel", ru: "Админ-панель для управления ботом" }, price: 960000 },
+      { id: "mail", name: { uz: "Mijozlar bazasi bo'yicha tarqatmalar", ru: "Рассылки по базе клиентов" }, price: 480000 },
+      { id: "site", name: { uz: "Saytingiz bilan integratsiya", ru: "Интеграция с вашим сайтом" }, price: 600000 },
+      { id: "host", name: { uz: "Server va bot ishi bir yilga", ru: "Сервер и работа бота на год" }, price: 720000 },
     ],
   },
   wedding: {
     name: { uz: "To'y taklifnomasi", ru: "Свадебное приглашение" },
-    base: 800000,
+    base: 1000000,
     days: 3,
     options: [
-      { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 200000 },
-      { id: "rsvp", name: { uz: "Mehmonlar javoblari sizga Telegramga", ru: "Ответы гостей вам в Telegram" }, price: 150000 },
-      { id: "music", name: { uz: "Musiqa va ochilish animatsiyasi", ru: "Музыка и анимация открытия" }, price: 150000 },
-      { id: "map", name: { uz: "Xarita va zalgacha yo'nalish", ru: "Карта и маршрут до зала" }, price: 100000 },
+      { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 240000 },
+      { id: "rsvp", name: { uz: "Mehmonlar javoblari sizga Telegramga", ru: "Ответы гостей вам в Telegram" }, price: 180000 },
+      { id: "music", name: { uz: "Musiqa va ochilish animatsiyasi", ru: "Музыка и анимация открытия" }, price: 180000 },
+      { id: "map", name: { uz: "Xarita va zalgacha yo'nalish", ru: "Карта и маршрут до зала" }, price: 120000 },
     ],
   },
   shop: {
     name: { uz: "Onlayn do'kon", ru: "Интернет-магазин" },
-    base: 7000000,
+    base: 8400000,
     days: 14,
     options: [
-      { id: "pay", name: { uz: "Click / Payme to'lovi", ru: "Оплата Click / Payme" }, price: 800000 },
-      { id: "stock", name: { uz: "Ombor va qoldiq hisobi", ru: "Учёт склада и остатков" }, price: 1000000 },
-      { id: "bot", name: { uz: "Do'kon Telegram-boti", ru: "Telegram-бот магазина" }, price: 1200000 },
-      { id: "delivery", name: { uz: "Yetkazib berish va buyurtma statuslari", ru: "Доставка и статусы заказов" }, price: 600000 },
-      { id: "crm", name: { uz: "CRM va ombor bilan integratsiya", ru: "Интеграция с CRM и складом" }, price: 2500000 },
-      { id: "host", name: { uz: "Hosting va .uz domeni bir yilga", ru: "Хостинг и домен .uz на год" }, price: 700000 },
+      { id: "pay", name: { uz: "Click / Payme to'lovi", ru: "Оплата Click / Payme" }, price: 1000000 },
+      { id: "stock", name: { uz: "Ombor va qoldiq hisobi", ru: "Учёт склада и остатков" }, price: 1200000 },
+      { id: "bot", name: { uz: "Do'kon Telegram-boti", ru: "Telegram-бот магазина" }, price: 1440000 },
+      { id: "delivery", name: { uz: "Yetkazib berish va buyurtma statuslari", ru: "Доставка и статусы заказов" }, price: 720000 },
+      { id: "crm", name: { uz: "CRM va ombor bilan integratsiya", ru: "Интеграция с CRM и складом" }, price: 3000000 },
+      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 840000 },
     ],
   },
   optim: {
     name: { uz: "Biznes-jarayon optimizatsiyasi", ru: "Оптимизация бизнес-процессов" },
-    base: 6000000,
+    base: 7200000,
     days: 14,
     options: [
-      { id: "audit", name: { uz: "Bo'limlarning chuqur auditi", ru: "Глубокий аудит отделов" }, price: 1500000 },
-      { id: "docs", name: { uz: "Reglament va yo'riqnomalar", ru: "Регламенты и инструкции" }, price: 800000 },
-      { id: "auto", name: { uz: "1 jarayonni avtomatlashtirish", ru: "Автоматизация одного процесса" }, price: 1200000 },
+      { id: "audit", name: { uz: "Bo'limlarning chuqur auditi", ru: "Глубокий аудит отделов" }, price: 1800000 },
+      { id: "docs", name: { uz: "Reglament va yo'riqnomalar", ru: "Регламенты и инструкции" }, price: 960000 },
+      { id: "auto", name: { uz: "1 jarayonni avtomatlashtirish", ru: "Автоматизация одного процесса" }, price: 1440000 },
     ],
   },
   hr: {
     name: { uz: "HR-integratsiya", ru: "HR-интеграция" },
-    base: 7000000,
+    base: 8400000,
     days: 16,
     options: [
-      { id: "ats", name: { uz: "Nomzodlar trekeri (ATS)", ru: "Трекер кандидатов (ATS)" }, price: 1500000 },
-      { id: "bot", name: { uz: "Telegramda HR-bot", ru: "HR-бот в Telegram" }, price: 900000 },
-      { id: "docs", name: { uz: "Hujjatlarni avto-yaratish", ru: "Автогенерация документов" }, price: 700000 },
+      { id: "ats", name: { uz: "Nomzodlar trekeri (ATS)", ru: "Трекер кандидатов (ATS)" }, price: 1800000 },
+      { id: "bot", name: { uz: "Telegramda HR-bot", ru: "HR-бот в Telegram" }, price: 1080000 },
+      { id: "docs", name: { uz: "Hujjatlarni avto-yaratish", ru: "Автогенерация документов" }, price: 840000 },
     ],
   },
   crm: {
     name: { uz: "CRM-integratsiya", ru: "CRM-интеграция" },
-    base: 9000000,
+    base: 10800000,
     days: 18,
     options: [
-      { id: "migrate", name: { uz: "Ma'lumotlarni ko'chirish", ru: "Перенос данных" }, price: 1200000 },
-      { id: "tel", name: { uz: "Telefoniya va qo'ng'iroqlar", ru: "Телефония и звонки" }, price: 1500000 },
-      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 800000 },
+      { id: "migrate", name: { uz: "Ma'lumotlarni ko'chirish", ru: "Перенос данных" }, price: 1440000 },
+      { id: "tel", name: { uz: "Telefoniya va qo'ng'iroqlar", ru: "Телефония и звонки" }, price: 1800000 },
+      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 960000 },
     ],
   },
   ai: {
     name: { uz: "AI-agentlar", ru: "ИИ-агенты" },
-    base: 12000000,
+    base: 14400000,
     days: 21,
     options: [
-      { id: "voice", name: { uz: "Ovozli bot", ru: "Голосовой бот" }, price: 3000000 },
-      { id: "crm", name: { uz: "CRM bilan bog'lash", ru: "Связь с CRM" }, price: 1500000 },
-      { id: "analytics", name: { uz: "Suhbatlar tahlili", ru: "Аналитика диалогов" }, price: 1000000 },
+      { id: "voice", name: { uz: "Ovozli bot", ru: "Голосовой бот" }, price: 3600000 },
+      { id: "crm", name: { uz: "CRM bilan bog'lash", ru: "Связь с CRM" }, price: 1800000 },
+      { id: "analytics", name: { uz: "Suhbatlar tahlili", ru: "Аналитика диалогов" }, price: 1200000 },
+    ],
+  },
+  odoo: {
+    name: { uz: "ODOO joriy etish", ru: "Внедрение ODOO" },
+    base: 14000000,
+    days: 20,
+    options: [
+      { id: "migrate", name: { uz: "Mavjud ma'lumotlarni ko'chirish", ru: "Перенос текущих данных" }, price: 2000000 },
+      { id: "modules", name: { uz: "Modullarni sozlash (sklad, buxgalteriya, CRM)", ru: "Настройка модулей (склад, бухгалтерия, CRM)" }, price: 2500000 },
+      { id: "integrate", name: { uz: "Sayt va bot bilan integratsiya", ru: "Интеграция с сайтом и ботом" }, price: 1500000 },
+      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 1000000 },
     ],
   },
 };
@@ -143,6 +154,103 @@ const ui = () => UI[L()];
 
 const fmt = (n) => n.toLocaleString("ru-RU").replace(/,/g, " ");
 
+/* ---------- валюты ---------- */
+// Курсы фиксированные (сум за 1 единицу валюты) — сайт статический, без
+// живого API форекса. Обновлять вручную по мере надобности.
+const CURRENCIES = {
+  USD: { flag: "🇺🇸", rateToUZS: 12700 },
+  UZS: { flag: "🇺🇿", rateToUZS: 1 },
+  RUB: { flag: "🇷🇺", rateToUZS: 140 },
+  TRY: { flag: "🇹🇷", rateToUZS: 370 },
+  AZN: { flag: "🇦🇿", rateToUZS: 7450 },
+};
+const CUR_KEY = "silkway_currency";
+const currency = { code: "USD" };
+try {
+  const saved = localStorage.getItem(CUR_KEY);
+  if (saved && CURRENCIES[saved]) currency.code = saved;
+} catch (e) {}
+
+function currencyWord(code) {
+  return code === "UZS" ? ui().fSum : code;
+}
+
+function formatAmountOnly(uzsAmount, code) {
+  const amount = code === "UZS" ? Math.round(uzsAmount) : Math.round(uzsAmount / CURRENCIES[code].rateToUZS);
+  return fmt(amount);
+}
+
+function moneyLabel(uzsAmount, code) {
+  return formatAmountOnly(uzsAmount, code) + " " + currencyWord(code);
+}
+
+function priceFromLabel(uzsAmount) {
+  const money = moneyLabel(uzsAmount, currency.code);
+  if (L() !== "uz") return "от " + money;
+  // «so'mdan» пишется слитно (родной суффикс); для остальных валют — раздельно
+  return currency.code === "UZS" ? money + "dan" : money + " dan";
+}
+
+function pulsePrice(el) {
+  if (reduceMotion || !el) return;
+  el.classList.remove("price-pulse");
+  void el.offsetWidth; // рестарт CSS-анимации
+  el.classList.add("price-pulse");
+}
+
+function renderServicePrices(pulse) {
+  document.querySelectorAll(".stop[data-service]").forEach((stop) => {
+    const svc = SERVICES[stop.dataset.service];
+    const priceEl = stop.querySelector(".stop-price");
+    if (!svc || !priceEl) return;
+    priceEl.textContent = priceFromLabel(svc.base);
+    if (pulse) pulsePrice(priceEl);
+  });
+}
+
+function setCurrency(code) {
+  if (!CURRENCIES[code] || code === currency.code) return;
+  currency.code = code;
+  try { localStorage.setItem(CUR_KEY, code); } catch (e) {}
+  document.getElementById("currency-flag").textContent = CURRENCIES[code].flag;
+  document.getElementById("currency-code").textContent = code;
+  document.querySelectorAll("#currency-menu li").forEach((li) => {
+    li.setAttribute("aria-selected", li.dataset.currency === code ? "true" : "false");
+  });
+  renderServicePrices(true);
+  renderOptions();
+  renderTotal();
+  pulsePrice(el.price);
+}
+
+(function initCurrencySwitch() {
+  const wrap = document.getElementById("currency-switch");
+  const btn = document.getElementById("currency-btn");
+  const menu = document.getElementById("currency-menu");
+  if (!wrap || !btn || !menu) return;
+
+  document.getElementById("currency-flag").textContent = CURRENCIES[currency.code].flag;
+  document.getElementById("currency-code").textContent = currency.code;
+  menu.querySelectorAll("li").forEach((li) => {
+    li.setAttribute("aria-selected", li.dataset.currency === currency.code ? "true" : "false");
+  });
+
+  function close() {
+    wrap.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+  }
+  function toggle() {
+    const open = wrap.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  btn.addEventListener("click", (e) => { e.stopPropagation(); toggle(); });
+  menu.querySelectorAll("li").forEach((li) => {
+    li.addEventListener("click", () => { setCurrency(li.dataset.currency); close(); });
+  });
+  document.addEventListener("click", (e) => { if (!wrap.contains(e.target)) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+})();
+
 const el = {
   chips: document.getElementById("cfg-services"),
   opts: document.getElementById("cfg-options"),
@@ -156,6 +264,7 @@ const el = {
   email: document.getElementById("cfg-email"),
   website: document.getElementById("cfg-hp"),
   error: document.getElementById("cfg-error"),
+  currencyWord: document.getElementById("cfg-currency-word"),
 };
 
 function renderChips() {
@@ -195,7 +304,7 @@ function renderOptions() {
     name.textContent = opt.name[L()];
     const price = document.createElement("span");
     price.className = "cfg-opt-price";
-    price.textContent = "+" + fmt(opt.price);
+    price.textContent = "+" + moneyLabel(opt.price, currency.code);
     label.append(input, name, price);
     el.opts.appendChild(label);
   }
@@ -239,11 +348,14 @@ function calc() {
   return { svc, price, daysText, chosen };
 }
 
+// priceShown хранится ВСЕГДА в сумах (единый источник истины) — конвертация
+// в выбранную валюту происходит только на этапе отображения каждого кадра,
+// поэтому твин остаётся плавным даже сразу после смены валюты.
 let priceShown = 0;
-function animatePrice(target) {
+function animatePrice(targetUZS) {
   if (reduceMotion) {
-    el.price.textContent = fmt(target);
-    priceShown = target;
+    el.price.textContent = formatAmountOnly(targetUZS, currency.code);
+    priceShown = targetUZS;
     return;
   }
   const from = priceShown;
@@ -252,9 +364,9 @@ function animatePrice(target) {
   function tick(now) {
     const p = Math.min((now - start) / dur, 1);
     const eased = 1 - Math.pow(1 - p, 3);
-    el.price.textContent = fmt(Math.round(from + (target - from) * eased));
+    el.price.textContent = formatAmountOnly(from + (targetUZS - from) * eased, currency.code);
     if (p < 1) requestAnimationFrame(tick);
-    else priceShown = target;
+    else priceShown = targetUZS;
   }
   requestAnimationFrame(tick);
 }
@@ -263,6 +375,7 @@ function renderTotal() {
   const { svc, price, daysText, chosen } = calc();
   el.name.textContent = svc.name[L()];
   animatePrice(price);
+  if (el.currencyWord) el.currencyWord.textContent = currencyWord(currency.code);
   el.days.textContent = daysText;
   el.summary.innerHTML = "";
   const items = [ui().basePkg(svc.name[L()]), ...chosen];
@@ -284,7 +397,8 @@ function buildOrderText() {
     u.fService + ": " + svc.name[L()],
     ...(chosen.length ? [u.fOptions + ": " + chosen.join(", ")] : []),
     ...(state.urgent ? [u.fUrgentYes] : []),
-    u.fCalc + ": " + fmt(price) + " " + u.fSum + ", " + u.fTerm + ": " + daysText,
+    u.fCalc + ": " + moneyLabel(price, currency.code) + ", " + u.fTerm + ": " + daysText,
+    ...(currency.code !== "UZS" ? [(L() === "uz" ? "Taxminan" : "Ориентировочно") + ": ≈ " + moneyLabel(price, "UZS")] : []),
     ...(contact ? [u.fContact + ": " + contact] : []),
     ...(email ? ["Email: " + email] : []),
   ].join("\n");
@@ -374,6 +488,15 @@ document.querySelectorAll("[data-order]").forEach((btn) => {
 renderChips();
 renderOptions();
 renderTotal();
+renderServicePrices();
+
+// язык меняется отдельным модулем (i18n.js) — пересчитываем цены/формулировки
+// после его обновления DOM (иначе слово валюты откатится к статике из i18n)
+window.addEventListener("silkway:lang", () => {
+  renderServicePrices();
+  renderOptions();
+  renderTotal();
+});
 
 // перерисовать конфигуратор при смене языка
 window.addEventListener("silkway:lang", () => {
@@ -877,7 +1000,8 @@ function startStarfield(canvas, host, opts) {
     }
 
     const dust = isLight ? "#1C3A70" : "#F7F4EE";
-    const dustAlpha = isLight ? 0.5 : 1;
+    const dustAlpha = isLight ? 0.85 : 1;
+    const sizeScale = isLight ? 1.6 : 1;
     for (const s of stars) {
       s.x += s.vx;
       s.y += s.vy;
@@ -886,10 +1010,10 @@ function startStarfield(canvas, host, opts) {
       if (s.y < 0) s.y = H;
       if (s.y > H) s.y = 0;
       const tw = Math.sin(t * 0.002 + s.phase) * 0.5 + 0.5;
-      ctx.globalAlpha = Math.min(1, s.alpha * (0.3 + 0.7 * tw) * (s.gold ? 1 : dustAlpha));
+      ctx.globalAlpha = Math.min(1, s.alpha * (0.4 + 0.6 * tw) * (s.gold ? 1 : dustAlpha));
       ctx.fillStyle = s.gold ? "#D9B545" : dust;
       ctx.beginPath();
-      ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+      ctx.arc(s.x, s.y, s.size * (s.gold ? 1 : sizeScale), 0, Math.PI * 2);
       ctx.fill();
     }
     ctx.globalAlpha = 1;

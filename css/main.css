@@ -133,6 +133,88 @@ a { color: inherit; }
 }
 .lang-btn.is-active { background: var(--gold); border-color: var(--gold); color: var(--night); font-weight: 500; }
 
+/* ---------- переключатель валют ---------- */
+.currency-switch { position: relative; }
+.currency-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(143, 163, 200, 0.4);
+  background: transparent;
+  color: var(--mist);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.currency-btn:hover, .currency-switch.is-open .currency-btn { border-color: var(--gold); color: var(--gold-soft); }
+.cur-flag { font-size: 0.95rem; line-height: 1; }
+.cur-chevron { transition: transform 0.25s ease; flex: none; }
+.currency-switch.is-open .cur-chevron { transform: rotate(180deg); }
+
+.currency-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 132px;
+  list-style: none;
+  background: var(--night);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.96);
+  transform-origin: top right;
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0.2s;
+  z-index: 60;
+}
+.currency-switch.is-open .currency-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.currency-menu li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--mist);
+  padding: 8px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.currency-menu li:hover { background: rgba(201, 162, 39, 0.12); color: var(--sand); }
+.currency-menu li[aria-selected="true"] { background: var(--gold); color: var(--night); font-weight: 500; }
+.currency-menu li .cur-flag { font-size: 1rem; }
+
+html.theme-light .currency-btn { color: #4A5468; border-color: rgba(28, 58, 112, 0.22); }
+html.theme-light .currency-btn:hover,
+html.theme-light .currency-switch.is-open .currency-btn { color: var(--gold-ink); border-color: var(--gold-ink); }
+html.theme-light .currency-menu { background: var(--white); border-color: rgba(28, 58, 112, 0.18); box-shadow: 0 16px 40px rgba(28, 58, 112, 0.16); }
+html.theme-light .currency-menu li { color: #4A5468; }
+html.theme-light .currency-menu li:hover { background: rgba(28, 58, 112, 0.08); color: var(--lapis); }
+html.theme-light .currency-menu li[aria-selected="true"] { background: var(--gold); color: var(--night); }
+
+/* «прокрутка» + вспышка цены при смене валюты */
+@keyframes price-pulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.08); text-shadow: 0 0 14px rgba(201, 162, 39, 0.7); }
+  100% { transform: scale(1); text-shadow: none; }
+}
+.price-pulse { animation: price-pulse 0.5s ease; display: inline-block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .currency-menu, .cur-chevron { transition: none; }
+  .price-pulse { animation: none; }
+}
+
 /* ---------- theme toggle (день/ночь) ---------- */
 .theme-toggle {
   display: inline-flex;
@@ -293,7 +375,9 @@ html.theme-light .tech-track span { color: var(--lapis); }
 
 .hero-facts {
   display: flex;
-  gap: clamp(24px, 4vw, 56px);
+  flex-wrap: wrap;
+  row-gap: 22px;
+  column-gap: clamp(24px, 4vw, 56px);
   border-top: 1px solid rgba(143, 163, 200, 0.25);
   padding-top: 28px;
 }
@@ -893,10 +977,11 @@ html.intro-lock, html.intro-lock body { overflow: hidden; }
 }
 .tech-track span {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: rgba(143, 163, 200, 0.75);
+  color: var(--mist);
 }
 .tech-track span::after {
   content: "·";
@@ -929,6 +1014,7 @@ html.intro-lock, html.intro-lock body { overflow: hidden; }
 .tech-ico.postgresql { -webkit-mask-image: url(../brand/tech/postgresql.svg); mask-image: url(../brand/tech/postgresql.svg); }
 .tech-ico.click      { -webkit-mask-image: url(../brand/tech/click.svg);      mask-image: url(../brand/tech/click.svg); }
 .tech-ico.payme      { -webkit-mask-image: url(../brand/tech/payme.svg);      mask-image: url(../brand/tech/payme.svg); }
+.tech-ico.odoo       { -webkit-mask-image: url(../brand/tech/odoo.svg);       mask-image: url(../brand/tech/odoo.svg); }
 
 /* при наведении иконка «занимается» тёплым огнём и гаснет обратно */
 .tech-track span {

@@ -35,6 +35,19 @@
     <button class="lang-btn is-active" type="button" data-lang="uz" aria-pressed="true">UZ</button>
     <button class="lang-btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
   </div>
+  <div class="currency-switch" id="currency-switch">
+    <button class="currency-btn" id="currency-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+      <span class="cur-flag" id="currency-flag">🇺🇸</span><span class="cur-code" id="currency-code">USD</span>
+      <svg class="cur-chevron" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <ul class="currency-menu" id="currency-menu" role="listbox">
+      <li role="option" data-currency="USD" aria-selected="true"><span class="cur-flag">🇺🇸</span><span>USD</span></li>
+      <li role="option" data-currency="UZS" aria-selected="false"><span class="cur-flag">🇺🇿</span><span>UZS</span></li>
+      <li role="option" data-currency="RUB" aria-selected="false"><span class="cur-flag">🇷🇺</span><span>RUB</span></li>
+      <li role="option" data-currency="TRY" aria-selected="false"><span class="cur-flag">🇹🇷</span><span>TRY</span></li>
+      <li role="option" data-currency="AZN" aria-selected="false"><span class="cur-flag">🇦🇿</span><span>AZN</span></li>
+    </ul>
+  </div>
   <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Тема: день / ночь" aria-pressed="false">
     <span class="theme-ico theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
     <span class="theme-ico theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg></span>
@@ -57,14 +70,16 @@
       </div>
       <dl class="hero-facts">
         <div><dt data-i18n="hero.fact1a">3 kundan</dt><dd data-i18n="hero.fact1b">loyiha ishga tushishi</dd></div>
-        <div><dt data-i18n="hero.fact2a">9 xizmat</dt><dd data-i18n="hero.fact2b">barchasi tayyor holda</dd></div>
+        <div><dt data-i18n="hero.fact2a">10 xizmat</dt><dd data-i18n="hero.fact2b">barchasi tayyor holda</dd></div>
         <div><dt data-i18n="hero.fact3a">1 chat</dt><dd data-i18n="hero.fact3b">butun jarayon Telegramda</dd></div>
+        <div><dt data-i18n="hero.fact4a">10+ kompaniya</dt><dd data-i18n="hero.fact4b">optimallashtirildi</dd></div>
+        <div><dt data-i18n="hero.fact5a">30+ bot va loyiha</dt><dd data-i18n="hero.fact5b">hozir ishlab turibdi</dd></div>
       </dl>
     </div>
   </div>
   <div class="tech-strip" aria-hidden="true">
     <div class="tech-track" id="tech-track">
-      <span><i class="tech-ico react"></i>React</span><span><i class="tech-ico nextjs"></i>Next.js</span><span><i class="tech-ico astro"></i>Astro</span><span><i class="tech-ico flutter"></i>Flutter</span><span><i class="tech-ico nodejs"></i>Node.js</span><span>aiogram</span><span><i class="tech-ico tailwind"></i>Tailwind</span><span><i class="tech-ico telegram"></i>Telegram API</span><span><i class="tech-ico click"></i>Click</span><span><i class="tech-ico payme"></i>Payme</span><span><i class="tech-ico vercel"></i>Vercel</span><span><i class="tech-ico postgresql"></i>PostgreSQL</span>
+      <span><i class="tech-ico react"></i>React</span><span><i class="tech-ico nextjs"></i>Next.js</span><span><i class="tech-ico astro"></i>Astro</span><span><i class="tech-ico flutter"></i>Flutter</span><span><i class="tech-ico nodejs"></i>Node.js</span><span>aiogram</span><span><i class="tech-ico tailwind"></i>Tailwind</span><span><i class="tech-ico telegram"></i>Telegram API</span><span><i class="tech-ico click"></i>Click</span><span><i class="tech-ico payme"></i>Payme</span><span><i class="tech-ico vercel"></i>Vercel</span><span><i class="tech-ico postgresql"></i>PostgreSQL</span><span><i class="tech-ico odoo"></i>ODOO</span>
     </div>
   </div>
 </section>
@@ -72,7 +87,7 @@
 <section class="services" id="services">
   <canvas class="section-stars" id="stars-services" aria-hidden="true"></canvas>
   <div class="section-head">
-    <h2 data-i18n="sv.title">To'qqiz xizmat</h2>
+    <h2 data-i18n="sv.title">O'nta xizmat</h2>
     <p data-i18n="sv.lead">Har bir xizmat — tayyor paket: nima kirishi, qancha turishi va qachon tayyor bo'lishi ma'lum.</p>
   </div>
 
@@ -90,7 +105,7 @@
           <li data-i18n="sv.landing.li2">Telefonga moslashuv</li>
           <li data-i18n="sv.landing.li3">Telegramga ariza shakli</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.landing.price">2 500 000 so'mdan</span><span class="stop-days" data-i18n="sv.landing.days">5 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.landing.price">3 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.landing.days">5 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="landing" data-i18n="order.btn">Buyurtma berish</button>
         </div>
@@ -108,7 +123,7 @@
           <li data-i18n="sv.site.li2">Xarita va kontaktlar</li>
           <li data-i18n="sv.site.li3">Tez yuklanish, SEO-asos</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.site.price">4 500 000 so'mdan</span><span class="stop-days" data-i18n="sv.site.days">10 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.site.price">5 400 000 so'mdan</span><span class="stop-days" data-i18n="sv.site.days">10 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="site" data-i18n="order.btn">Buyurtma berish</button>
         </div>
@@ -126,7 +141,7 @@
           <li data-i18n="sv.bot.li2">Arizalar chatingizga</li>
           <li data-i18n="sv.bot.li3">Tugmalar, katalog, savat</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.bot.price">2 500 000 so'mdan</span><span class="stop-days" data-i18n="sv.bot.days">7 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.bot.price">3 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.bot.days">7 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="bot" data-i18n="order.btn">Buyurtma berish</button>
         </div>
@@ -144,7 +159,7 @@
           <li data-i18n="sv.wedding.li2">Har bir mehmonga shaxsiy havola</li>
           <li data-i18n="sv.wedding.li3">«Boraman / bormayman» javoblari Telegramda</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.wedding.price">800 000 so'mdan</span><span class="stop-days" data-i18n="sv.wedding.days">3 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.wedding.price">1 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.wedding.days">3 kun</span></p>
         <p class="stop-market" data-i18n="sv.wedding.market">Mehmonlarga shaxsiy havolalar — oddiy shablonlarda bunday yo'q</p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="wedding" data-i18n="order.btn">Buyurtma berish</button>
@@ -163,7 +178,7 @@
           <li data-i18n="sv.shop.li2">Click / Payme to'lovi</li>
           <li data-i18n="sv.shop.li3">Buyurtmalar sizga Telegramga</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.shop.price">7 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.shop.days">14 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.shop.price">8 400 000 so'mdan</span><span class="stop-days" data-i18n="sv.shop.days">14 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="shop" data-i18n="order.btn">Buyurtma berish</button>
         </div>
@@ -181,7 +196,7 @@
           <li data-i18n="sv.optim.li2">Yaxshilash xaritasi</li>
           <li data-i18n="sv.optim.li3">Joriy etish va o'qitish</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.optim.price">6 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.optim.days">14 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.optim.price">7 200 000 so'mdan</span><span class="stop-days" data-i18n="sv.optim.days">14 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="optim" data-i18n="order.btn">Buyurtma berish</button>
         </div>
@@ -199,7 +214,7 @@
           <li data-i18n="sv.hr.li2">Tanlov bosqichlari</li>
           <li data-i18n="sv.hr.li3">Xodimlar onboardingi</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.hr.price">7 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.hr.days">16 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.hr.price">8 400 000 so'mdan</span><span class="stop-days" data-i18n="sv.hr.days">16 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="hr" data-i18n="order.btn">Buyurtma berish</button>
         </div>
@@ -217,7 +232,7 @@
           <li data-i18n="sv.crm.li2">Sayt + bot + ombor aloqasi</li>
           <li data-i18n="sv.crm.li3">Hisobot va voronkalar</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.crm.price">9 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.crm.days">18 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.crm.price">10 800 000 so'mdan</span><span class="stop-days" data-i18n="sv.crm.days">18 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="crm" data-i18n="order.btn">Buyurtma berish</button>
         </div>
@@ -235,9 +250,27 @@
           <li data-i18n="sv.ai.li2">AI chat-bot</li>
           <li data-i18n="sv.ai.li3">24/7 qo'ng'iroq qabuli</li>
         </ul>
-        <p class="stop-meta"><span class="stop-price" data-i18n="sv.ai.price">12 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.ai.days">21 kun</span></p>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.ai.price">14 400 000 so'mdan</span><span class="stop-days" data-i18n="sv.ai.days">21 kun</span></p>
         <div class="stop-actions">
           <button class="btn btn-line" type="button" data-order="ai" data-i18n="order.btn">Buyurtma berish</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="stop" data-service="odoo">
+      <span class="stop-dot" aria-hidden="true"></span>
+      <div class="stop-card">
+        <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><circle cx="12" cy="17" r="3"/><path d="M9.5 9.5L11 15M14.5 9.5L13 15"/></svg></span>
+        <h3 data-i18n="sv.odoo.h3">ODOO joriy etish</h3>
+        <p class="stop-desc" data-i18n="sv.odoo.desc">CRM, sklad va buxgalteriyangizni yagona ODOO tizimiga ko'chiramiz.</p>
+        <ul class="stop-list">
+          <li data-i18n="sv.odoo.li1">Ma'lumotlarni ko'chirish</li>
+          <li data-i18n="sv.odoo.li2">Modullarni sozlash</li>
+          <li data-i18n="sv.odoo.li3">Sayt/bot bilan integratsiya</li>
+        </ul>
+        <p class="stop-meta"><span class="stop-price" data-i18n="sv.odoo.price">14 000 000 so'mdan</span><span class="stop-days" data-i18n="sv.odoo.days">20 kun</span></p>
+        <div class="stop-actions">
+          <button class="btn btn-line" type="button" data-order="odoo" data-i18n="order.btn">Buyurtma berish</button>
         </div>
       </div>
     </article>
@@ -271,7 +304,7 @@
     </div>
     <aside class="cfg-total" aria-live="polite">
       <h3 class="cfg-total-title" id="cfg-name">Lending</h3>
-      <p class="cfg-total-price"><span id="cfg-price">2 500 000</span> <span data-i18n="cfg.currency">so'm</span></p>
+      <p class="cfg-total-price"><span id="cfg-price">2 500 000</span> <span id="cfg-currency-word" data-i18n="cfg.currency">so'm</span></p>
       <p class="cfg-total-days"><span data-i18n="cfg.days_prefix">Tayyor bo'ladi:</span> <span id="cfg-days">5 kun</span></p>
       <ul class="cfg-total-list" id="cfg-summary"></ul>
       <input class="cfg-contact" id="cfg-contact" type="text" autocomplete="tel" required aria-required="true" data-i18n-attr="placeholder:cfg.contact_ph" placeholder="Telefon yoki @username">
@@ -292,8 +325,8 @@
   </div>
   <div class="gifts-grid">
     <article class="gift">
-      <h3 data-i18n="gifts.g1h">.uz domeni — sovg'a</h3>
-      <p data-i18n="gifts.g1p">Sayt yoki do'kon buyurtmasida domenni bir yilga o'z hisobimizdan ro'yxatdan o'tkazamiz.</p>
+      <h3 data-i18n="gifts.g1h">Domen — sovg'a</h3>
+      <p data-i18n="gifts.g1p">Sayt yoki do'kon buyurtmasida istalgan zonadagi domenni (.uz, .com, .net va h.k.) bir yilga o'z hisobimizdan ro'yxatdan o'tkazamiz.</p>
     </article>
     <article class="gift">
       <h3 data-i18n="gifts.g2h">Bir oy qo'llab-quvvatlash — 0 so'm</h3>
