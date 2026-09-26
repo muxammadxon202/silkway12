@@ -1,114 +1,116 @@
 const SERVICES = {
   landing: {
     name: { uz: "Lending", ru: "Лендинг" },
-    base: 3000000,
+    base: 950000,
     days: 5,
     options: [
-      { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 360000 },
-      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 480000 },
-      { id: "pay", name: { uz: "Click / Payme to'lovini qabul qilish", ru: "Приём оплаты Click / Payme" }, price: 600000 },
-      { id: "seo", name: { uz: "SEO-asos va analitika ulash", ru: "SEO-база и подключение аналитики" }, price: 300000 },
-      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 840000 },
+      { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 120000 },
+      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 150000 },
+      { id: "pay", name: { uz: "Click / Payme to'lovini qabul qilish", ru: "Приём оплаты Click / Payme" }, price: 200000 },
+      { id: "seo", name: { uz: "SEO-asos va analitika ulash", ru: "SEO-база и подключение аналитики" }, price: 100000 },
+      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 250000 },
     ],
   },
   site: {
     name: { uz: "Kompaniya sayti", ru: "Сайт компании" },
-    base: 5400000,
+    base: 3800000,
     days: 10,
     options: [
-      { id: "admin", name: { uz: "Admin-panel — kontentni o'zingiz o'zgartirasiz", ru: "Админ-панель — сами меняете контент" }, price: 1800000 },
-      { id: "blog", name: { uz: "Yangiliklar yoki blog bo'limi", ru: "Раздел новостей или блога" }, price: 600000 },
-      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 720000 },
-      { id: "tg", name: { uz: "Saytdan arizalar Telegramga", ru: "Заявки с сайта в Telegram" }, price: 480000 },
-      { id: "crm", name: { uz: "CRM bilan integratsiya", ru: "Интеграция с CRM" }, price: 3000000 },
-      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 840000 },
+      { id: "admin", name: { uz: "Admin-panel — kontentni o'zingiz o'zgartirasiz", ru: "Админ-панель — сами меняете контент" }, price: 1260000 },
+      { id: "blog", name: { uz: "Yangiliklar yoki blog bo'limi", ru: "Раздел новостей или блога" }, price: 420000 },
+      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 500000 },
+      { id: "tg", name: { uz: "Saytdan arizalar Telegramga", ru: "Заявки с сайта в Telegram" }, price: 340000 },
+      { id: "crm", name: { uz: "CRM bilan integratsiya", ru: "Интеграция с CRM" }, price: 2100000 },
+      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 590000 },
     ],
   },
   bot: {
     name: { uz: "Telegram-bot", ru: "Telegram-бот" },
-    base: 3000000,
+    base: 1000000,
     days: 7,
     options: [
-      { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 840000 },
-      { id: "admin", name: { uz: "Botni boshqarish uchun admin-panel", ru: "Админ-панель для управления ботом" }, price: 960000 },
-      { id: "mail", name: { uz: "Mijozlar bazasi bo'yicha tarqatmalar", ru: "Рассылки по базе клиентов" }, price: 480000 },
-      { id: "site", name: { uz: "Saytingiz bilan integratsiya", ru: "Интеграция с вашим сайтом" }, price: 600000 },
-      { id: "host", name: { uz: "Server va bot ishi bir yilga", ru: "Сервер и работа бота на год" }, price: 720000 },
+      { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 300000 },
+      { id: "admin", name: { uz: "Botni boshqarish uchun admin-panel", ru: "Админ-панель для управления ботом" }, price: 300000 },
+      { id: "mail", name: { uz: "Mijozlar bazasi bo'yicha tarqatmalar", ru: "Рассылки по базе клиентов" }, price: 150000 },
+      { id: "site", name: { uz: "Saytingiz bilan integratsiya", ru: "Интеграция с вашим сайтом" }, price: 200000 },
+      { id: "host", name: { uz: "Server va bot ishi bir yilga", ru: "Сервер и работа бота на год" }, price: 250000 },
     ],
   },
   wedding: {
     name: { uz: "To'y taklifnomasi", ru: "Свадебное приглашение" },
-    base: 1000000,
+    base: 120000,
     days: 3,
     options: [
-      { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 240000 },
-      { id: "rsvp", name: { uz: "Mehmonlar javoblari sizga Telegramga", ru: "Ответы гостей вам в Telegram" }, price: 180000 },
-      { id: "music", name: { uz: "Musiqa va ochilish animatsiyasi", ru: "Музыка и анимация открытия" }, price: 180000 },
-      { id: "map", name: { uz: "Xarita va zalgacha yo'nalish", ru: "Карта и маршрут до зала" }, price: 120000 },
+      { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 30000 },
+      { id: "rsvp", name: { uz: "Mehmonlar javoblari sizga Telegramga", ru: "Ответы гостей вам в Telegram" }, price: 0 },
+      { id: "music", name: { uz: "Musiqa va ochilish animatsiyasi", ru: "Музыка и анимация открытия" }, price: 0 },
+      { id: "map", name: { uz: "Xarita va zalgacha yo'nalish", ru: "Карта и маршрут до зала" }, price: 0 },
     ],
   },
   shop: {
     name: { uz: "Onlayn do'kon", ru: "Интернет-магазин" },
-    base: 8400000,
+    base: 5900000,
     days: 14,
     options: [
-      { id: "pay", name: { uz: "Click / Payme to'lovi", ru: "Оплата Click / Payme" }, price: 1000000 },
-      { id: "stock", name: { uz: "Ombor va qoldiq hisobi", ru: "Учёт склада и остатков" }, price: 1200000 },
-      { id: "bot", name: { uz: "Do'kon Telegram-boti", ru: "Telegram-бот магазина" }, price: 1440000 },
-      { id: "delivery", name: { uz: "Yetkazib berish va buyurtma statuslari", ru: "Доставка и статусы заказов" }, price: 720000 },
-      { id: "crm", name: { uz: "CRM va ombor bilan integratsiya", ru: "Интеграция с CRM и складом" }, price: 3000000 },
-      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 840000 },
+      { id: "pay", name: { uz: "Click / Payme to'lovi", ru: "Оплата Click / Payme" }, price: 700000 },
+      { id: "stock", name: { uz: "Ombor va qoldiq hisobi", ru: "Учёт склада и остатков" }, price: 840000 },
+      { id: "bot", name: { uz: "Do'kon Telegram-boti", ru: "Telegram-бот магазина" }, price: 1010000 },
+      { id: "delivery", name: { uz: "Yetkazib berish va buyurtma statuslari", ru: "Доставка и статусы заказов" }, price: 500000 },
+      { id: "crm", name: { uz: "CRM va ombor bilan integratsiya", ru: "Интеграция с CRM и складом" }, price: 2100000 },
+      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 590000 },
     ],
   },
   optim: {
     name: { uz: "Biznes-jarayon optimizatsiyasi", ru: "Оптимизация бизнес-процессов" },
-    base: 7200000,
+    // в рекламе карточка без цены — лид-магнит «аудит бесплатно»
+    priceLabel: { uz: "Audit bepul", ru: "Аудит бесплатно" },
+    base: 5000000,
     days: 14,
     options: [
-      { id: "audit", name: { uz: "Bo'limlarning chuqur auditi", ru: "Глубокий аудит отделов" }, price: 1800000 },
-      { id: "docs", name: { uz: "Reglament va yo'riqnomalar", ru: "Регламенты и инструкции" }, price: 960000 },
-      { id: "auto", name: { uz: "1 jarayonni avtomatlashtirish", ru: "Автоматизация одного процесса" }, price: 1440000 },
+      { id: "audit", name: { uz: "Bo'limlarning chuqur auditi", ru: "Глубокий аудит отделов" }, price: 0 },
+      { id: "docs", name: { uz: "Reglament va yo'riqnomalar", ru: "Регламенты и инструкции" }, price: 670000 },
+      { id: "auto", name: { uz: "1 jarayonni avtomatlashtirish", ru: "Автоматизация одного процесса" }, price: 1010000 },
     ],
   },
   hr: {
     name: { uz: "HR-integratsiya", ru: "HR-интеграция" },
-    base: 8400000,
+    base: 5900000,
     days: 16,
     options: [
-      { id: "ats", name: { uz: "Nomzodlar trekeri (ATS)", ru: "Трекер кандидатов (ATS)" }, price: 1800000 },
-      { id: "bot", name: { uz: "Telegramda HR-bot", ru: "HR-бот в Telegram" }, price: 1080000 },
-      { id: "docs", name: { uz: "Hujjatlarni avto-yaratish", ru: "Автогенерация документов" }, price: 840000 },
+      { id: "ats", name: { uz: "Nomzodlar trekeri (ATS)", ru: "Трекер кандидатов (ATS)" }, price: 1260000 },
+      { id: "bot", name: { uz: "Telegramda HR-bot", ru: "HR-бот в Telegram" }, price: 760000 },
+      { id: "docs", name: { uz: "Hujjatlarni avto-yaratish", ru: "Автогенерация документов" }, price: 590000 },
     ],
   },
   crm: {
     name: { uz: "CRM-integratsiya", ru: "CRM-интеграция" },
-    base: 10800000,
+    base: 7600000,
     days: 18,
     options: [
-      { id: "migrate", name: { uz: "Ma'lumotlarni ko'chirish", ru: "Перенос данных" }, price: 1440000 },
-      { id: "tel", name: { uz: "Telefoniya va qo'ng'iroqlar", ru: "Телефония и звонки" }, price: 1800000 },
-      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 960000 },
+      { id: "migrate", name: { uz: "Ma'lumotlarni ko'chirish", ru: "Перенос данных" }, price: 1010000 },
+      { id: "tel", name: { uz: "Telefoniya va qo'ng'iroqlar", ru: "Телефония и звонки" }, price: 1260000 },
+      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 670000 },
     ],
   },
   ai: {
     name: { uz: "AI-agentlar", ru: "ИИ-агенты" },
-    base: 14400000,
+    base: 10100000,
     days: 21,
     options: [
-      { id: "voice", name: { uz: "Ovozli bot", ru: "Голосовой бот" }, price: 3600000 },
-      { id: "crm", name: { uz: "CRM bilan bog'lash", ru: "Связь с CRM" }, price: 1800000 },
-      { id: "analytics", name: { uz: "Suhbatlar tahlili", ru: "Аналитика диалогов" }, price: 1200000 },
+      { id: "voice", name: { uz: "Ovozli bot", ru: "Голосовой бот" }, price: 2520000 },
+      { id: "crm", name: { uz: "CRM bilan bog'lash", ru: "Связь с CRM" }, price: 1260000 },
+      { id: "analytics", name: { uz: "Suhbatlar tahlili", ru: "Аналитика диалогов" }, price: 840000 },
     ],
   },
   odoo: {
     name: { uz: "ODOO joriy etish", ru: "Внедрение ODOO" },
-    base: 14000000,
+    base: 9800000,
     days: 20,
     options: [
-      { id: "migrate", name: { uz: "Mavjud ma'lumotlarni ko'chirish", ru: "Перенос текущих данных" }, price: 2000000 },
-      { id: "modules", name: { uz: "Modullarni sozlash (sklad, buxgalteriya, CRM)", ru: "Настройка модулей (склад, бухгалтерия, CRM)" }, price: 2500000 },
-      { id: "integrate", name: { uz: "Sayt va bot bilan integratsiya", ru: "Интеграция с сайтом и ботом" }, price: 1500000 },
-      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 1000000 },
+      { id: "migrate", name: { uz: "Mavjud ma'lumotlarni ko'chirish", ru: "Перенос текущих данных" }, price: 1400000 },
+      { id: "modules", name: { uz: "Modullarni sozlash (sklad, buxgalteriya, CRM)", ru: "Настройка модулей (склад, бухгалтерия, CRM)" }, price: 1750000 },
+      { id: "integrate", name: { uz: "Sayt va bot bilan integratsiya", ru: "Интеграция с сайтом и ботом" }, price: 1050000 },
+      { id: "train", name: { uz: "Jamoani o'qitish", ru: "Обучение команды" }, price: 700000 },
     ],
   },
 };
@@ -130,7 +132,7 @@ const UI = {
     sendErr: "Telegram ochildi — «Yuborish»ni bosing",
     orderTitle: "Silkway saytidan ariza",
     fService: "Xizmat", fOptions: "Opsiyalar", fUrgentYes: "Shoshilinch: ha", fContact: "Aloqa",
-    fCalc: "Hisob", fSum: "so'm", fTerm: "muddat",
+    fCalc: "Hisob", fSum: "so'm", fTerm: "muddat", free: "bepul",
     basePkg: (n) => "«" + n + "» asosiy paketi",
     urgentItem: "Shoshilinch bajarish",
     urgent12: "12 soat", urgent24: "1–2 kun",
@@ -143,7 +145,7 @@ const UI = {
     sendErr: "Открыт Telegram — нажмите «Отправить»",
     orderTitle: "Заявка с сайта Silkway",
     fService: "Услуга", fOptions: "Опции", fUrgentYes: "Срочно: да", fContact: "Связь",
-    fCalc: "Расчёт", fSum: "сум", fTerm: "срок",
+    fCalc: "Расчёт", fSum: "сум", fTerm: "срок", free: "бесплатно",
     basePkg: (n) => "Базовый пакет «" + n + "»",
     urgentItem: "Срочное выполнение",
     urgent12: "12 часов", urgent24: "1–2 дня",
@@ -202,7 +204,7 @@ function renderServicePrices(pulse) {
     const svc = SERVICES[stop.dataset.service];
     const priceEl = stop.querySelector(".stop-price");
     if (!svc || !priceEl) return;
-    priceEl.textContent = priceFromLabel(svc.base);
+    priceEl.textContent = svc.priceLabel ? svc.priceLabel[L()] : priceFromLabel(svc.base);
     if (pulse) pulsePrice(priceEl);
   });
 }
@@ -303,7 +305,7 @@ function renderOptions() {
     name.textContent = opt.name[L()];
     const price = document.createElement("span");
     price.className = "cfg-opt-price";
-    price.textContent = "+" + moneyLabel(opt.price, currency.code);
+    price.textContent = opt.price ? "+" + moneyLabel(opt.price, currency.code) : ui().free;
     label.append(input, name, price);
     el.opts.appendChild(label);
   }
