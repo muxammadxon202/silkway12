@@ -44,7 +44,7 @@
       "sv.optim.li1": "Joriy jarayonlar auditi",
       "sv.optim.li2": "Yaxshilash xaritasi",
       "sv.optim.li3": "Joriy etish va o'qitish",
-      "sv.optim.price": "7 200 000 so'mdan",
+      "sv.optim.price": "Audit bepul",
       "sv.optim.days": "14 kun",
       "sv.hr.h3": "HR-integratsiya",
       "sv.hr.desc": "Yollash va moslashuvni avtomatlashtirish: nomzod arizasidan onboardinggacha.",
@@ -81,7 +81,7 @@
       "sv.landing.li1": "Brendingizga mos dizayn",
       "sv.landing.li2": "Telefonga moslashuv",
       "sv.landing.li3": "Telegramga ariza shakli",
-      "sv.landing.price": "3 000 000 so'mdan",
+      "sv.landing.price": "950 000 so'mdan",
       "sv.landing.days": "5 kun",
 
       "sv.site.h3": "Kompaniya sayti",
@@ -97,7 +97,7 @@
       "sv.bot.li1": "Menyu va suhbat ssenariylari",
       "sv.bot.li2": "Arizalar chatingizga",
       "sv.bot.li3": "Tugmalar, katalog, savat",
-      "sv.bot.price": "3 000 000 so'mdan",
+      "sv.bot.price": "1 000 000 so'mdan",
       "sv.bot.days": "7 kun",
 
       "sv.wedding.h3": "To'y taklifnomasi",
@@ -105,7 +105,7 @@
       "sv.wedding.li1": "UZ + RU versiyalari",
       "sv.wedding.li2": "Har bir mehmonga shaxsiy havola",
       "sv.wedding.li3": "«Boraman / bormayman» javoblari Telegramda",
-      "sv.wedding.price": "1 000 000 so'mdan",
+      "sv.wedding.price": "120 000 so'mdan",
       "sv.wedding.days": "3 kun",
       "sv.wedding.market": "Mehmonlarga shaxsiy havolalar — oddiy shablonlarda bunday yo'q",
 
@@ -213,7 +213,7 @@
       "sv.optim.li1": "Аудит текущих процессов",
       "sv.optim.li2": "Карта улучшений",
       "sv.optim.li3": "Внедрение и обучение",
-      "sv.optim.price": "от 7 200 000 сум",
+      "sv.optim.price": "Аудит бесплатно",
       "sv.optim.days": "14 дней",
       "sv.hr.h3": "HR-интеграция",
       "sv.hr.desc": "Автоматизация найма и адаптации: от заявок кандидатов до онбординга.",
@@ -250,7 +250,7 @@
       "sv.landing.li1": "Дизайн под ваш бренд",
       "sv.landing.li2": "Адаптив под телефон",
       "sv.landing.li3": "Форма заявки в Telegram",
-      "sv.landing.price": "от 3 000 000 сум",
+      "sv.landing.price": "от 950 000 сум",
       "sv.landing.days": "5 дней",
 
       "sv.site.h3": "Сайт компании",
@@ -266,7 +266,7 @@
       "sv.bot.li1": "Меню и сценарии диалога",
       "sv.bot.li2": "Заявки вам в чат",
       "sv.bot.li3": "Кнопки, каталог, корзина",
-      "sv.bot.price": "от 3 000 000 сум",
+      "sv.bot.price": "от 1 000 000 сум",
       "sv.bot.days": "7 дней",
 
       "sv.wedding.h3": "Свадебное приглашение",
@@ -274,7 +274,7 @@
       "sv.wedding.li1": "RU + UZ версии",
       "sv.wedding.li2": "Личная ссылка каждому гостю",
       "sv.wedding.li3": "Ответы «приду / не приду» в Telegram",
-      "sv.wedding.price": "от 1 000 000 сум",
+      "sv.wedding.price": "от 120 000 сум",
       "sv.wedding.days": "3 дня",
       "sv.wedding.market": "Личные ссылки гостям — такого нет у типовых шаблонов",
 

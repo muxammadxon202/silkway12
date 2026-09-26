@@ -1,7 +1,7 @@
 const SERVICES = {
   landing: {
     name: { uz: "Lending", ru: "Лендинг" },
-    base: 3000000,
+    base: 950000,
     days: 5,
     options: [
       { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 360000 },
@@ -26,7 +26,7 @@ const SERVICES = {
   },
   bot: {
     name: { uz: "Telegram-bot", ru: "Telegram-бот" },
-    base: 3000000,
+    base: 1000000,
     days: 7,
     options: [
       { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 840000 },
@@ -38,7 +38,7 @@ const SERVICES = {
   },
   wedding: {
     name: { uz: "To'y taklifnomasi", ru: "Свадебное приглашение" },
-    base: 1000000,
+    base: 120000,
     days: 3,
     options: [
       { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 240000 },
@@ -62,10 +62,12 @@ const SERVICES = {
   },
   optim: {
     name: { uz: "Biznes-jarayon optimizatsiyasi", ru: "Оптимизация бизнес-процессов" },
+    // в рекламе карточка без цены — лид-магнит «аудит бесплатно»
+    priceLabel: { uz: "Audit bepul", ru: "Аудит бесплатно" },
     base: 7200000,
     days: 14,
     options: [
-      { id: "audit", name: { uz: "Bo'limlarning chuqur auditi", ru: "Глубокий аудит отделов" }, price: 1800000 },
+      { id: "audit", name: { uz: "Bo'limlarning chuqur auditi", ru: "Глубокий аудит отделов" }, price: 0 },
       { id: "docs", name: { uz: "Reglament va yo'riqnomalar", ru: "Регламенты и инструкции" }, price: 960000 },
       { id: "auto", name: { uz: "1 jarayonni avtomatlashtirish", ru: "Автоматизация одного процесса" }, price: 1440000 },
     ],
@@ -130,7 +132,7 @@ const UI = {
     sendErr: "Telegram ochildi — «Yuborish»ni bosing",
     orderTitle: "Silkway saytidan ariza",
     fService: "Xizmat", fOptions: "Opsiyalar", fUrgentYes: "Shoshilinch: ha", fContact: "Aloqa",
-    fCalc: "Hisob", fSum: "so'm", fTerm: "muddat",
+    fCalc: "Hisob", fSum: "so'm", fTerm: "muddat", free: "bepul",
     basePkg: (n) => "«" + n + "» asosiy paketi",
     urgentItem: "Shoshilinch bajarish",
     urgent12: "12 soat", urgent24: "1–2 kun",
@@ -143,7 +145,7 @@ const UI = {
     sendErr: "Открыт Telegram — нажмите «Отправить»",
     orderTitle: "Заявка с сайта Silkway",
     fService: "Услуга", fOptions: "Опции", fUrgentYes: "Срочно: да", fContact: "Связь",
-    fCalc: "Расчёт", fSum: "сум", fTerm: "срок",
+    fCalc: "Расчёт", fSum: "сум", fTerm: "срок", free: "бесплатно",
     basePkg: (n) => "Базовый пакет «" + n + "»",
     urgentItem: "Срочное выполнение",
     urgent12: "12 часов", urgent24: "1–2 дня",
@@ -202,7 +204,7 @@ function renderServicePrices(pulse) {
     const svc = SERVICES[stop.dataset.service];
     const priceEl = stop.querySelector(".stop-price");
     if (!svc || !priceEl) return;
-    priceEl.textContent = priceFromLabel(svc.base);
+    priceEl.textContent = svc.priceLabel ? svc.priceLabel[L()] : priceFromLabel(svc.base);
     if (pulse) pulsePrice(priceEl);
   });
 }
@@ -303,7 +305,7 @@ function renderOptions() {
     name.textContent = opt.name[L()];
     const price = document.createElement("span");
     price.className = "cfg-opt-price";
-    price.textContent = "+" + moneyLabel(opt.price, currency.code);
+    price.textContent = opt.price ? "+" + moneyLabel(opt.price, currency.code) : ui().free;
     label.append(input, name, price);
     el.opts.appendChild(label);
   }
