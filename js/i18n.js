@@ -108,6 +108,7 @@
       "sv.wedding.price": "120 000 so'mdan",
       "sv.wedding.days": "3 kun",
       "sv.wedding.market": "Mehmonlarga shaxsiy havolalar — oddiy shablonlarda bunday yo'q",
+      "sv.bot.market": "Server alohida to'lanadi — oyiga 110 000 so'm. Ishga tushgandan keyin 1 oy yordam — bepul",
 
       "sv.shop.h3": "Onlayn do'kon",
       "sv.shop.desc": "Katalog, savat, to'lovni qabul qilish va buyurtma haqida bildirishnomalar. Ijara va vositachilarsiz onlayn savdo qiling.",
@@ -277,6 +278,7 @@
       "sv.wedding.price": "от 120 000 сум",
       "sv.wedding.days": "3 дня",
       "sv.wedding.market": "Личные ссылки гостям — такого нет у типовых шаблонов",
+      "sv.bot.market": "Сервер оплачивается отдельно — 110 000 сум в месяц. Месяц помощи после запуска — бесплатно",
 
       "sv.shop.h3": "Интернет-магазин",
       "sv.shop.desc": "Каталог, корзина, приём оплаты и уведомления о заказах. Торгуйте онлайн без аренды и посредников.",
