@@ -4,11 +4,11 @@ const SERVICES = {
     base: 950000,
     days: 5,
     options: [
-      { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 360000 },
-      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 480000 },
-      { id: "pay", name: { uz: "Click / Payme to'lovini qabul qilish", ru: "Приём оплаты Click / Payme" }, price: 600000 },
-      { id: "seo", name: { uz: "SEO-asos va analitika ulash", ru: "SEO-база и подключение аналитики" }, price: 300000 },
-      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 840000 },
+      { id: "anim", name: { uz: "Animatsiya va mikro-interaktivlik", ru: "Анимации и микро-взаимодействия" }, price: 120000 },
+      { id: "lang2", name: { uz: "Ikkinchi til versiyasi (UZ yoki RU)", ru: "Вторая языковая версия (UZ или RU)" }, price: 150000 },
+      { id: "pay", name: { uz: "Click / Payme to'lovini qabul qilish", ru: "Приём оплаты Click / Payme" }, price: 200000 },
+      { id: "seo", name: { uz: "SEO-asos va analitika ulash", ru: "SEO-база и подключение аналитики" }, price: 100000 },
+      { id: "host", name: { uz: "Hosting va domen (istalgan zona) bir yilga", ru: "Хостинг и домен (любая зона) на год" }, price: 250000 },
     ],
   },
   site: {
@@ -29,11 +29,11 @@ const SERVICES = {
     base: 1000000,
     days: 7,
     options: [
-      { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 840000 },
-      { id: "admin", name: { uz: "Botni boshqarish uchun admin-panel", ru: "Админ-панель для управления ботом" }, price: 960000 },
-      { id: "mail", name: { uz: "Mijozlar bazasi bo'yicha tarqatmalar", ru: "Рассылки по базе клиентов" }, price: 480000 },
-      { id: "site", name: { uz: "Saytingiz bilan integratsiya", ru: "Интеграция с вашим сайтом" }, price: 600000 },
-      { id: "host", name: { uz: "Server va bot ishi bir yilga", ru: "Сервер и работа бота на год" }, price: 720000 },
+      { id: "pay", name: { uz: "Botda to'lovlarni qabul qilish", ru: "Приём платежей в боте" }, price: 300000 },
+      { id: "admin", name: { uz: "Botni boshqarish uchun admin-panel", ru: "Админ-панель для управления ботом" }, price: 300000 },
+      { id: "mail", name: { uz: "Mijozlar bazasi bo'yicha tarqatmalar", ru: "Рассылки по базе клиентов" }, price: 150000 },
+      { id: "site", name: { uz: "Saytingiz bilan integratsiya", ru: "Интеграция с вашим сайтом" }, price: 200000 },
+      { id: "host", name: { uz: "Server va bot ishi bir yilga", ru: "Сервер и работа бота на год" }, price: 250000 },
     ],
   },
   wedding: {
@@ -41,10 +41,10 @@ const SERVICES = {
     base: 120000,
     days: 3,
     options: [
-      { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 240000 },
-      { id: "rsvp", name: { uz: "Mehmonlar javoblari sizga Telegramga", ru: "Ответы гостей вам в Telegram" }, price: 180000 },
-      { id: "music", name: { uz: "Musiqa va ochilish animatsiyasi", ru: "Музыка и анимация открытия" }, price: 180000 },
-      { id: "map", name: { uz: "Xarita va zalgacha yo'nalish", ru: "Карта и маршрут до зала" }, price: 120000 },
+      { id: "guests", name: { uz: "Har bir mehmon uchun shaxsiy havolalar", ru: "Личные ссылки для каждого гостя" }, price: 30000 },
+      { id: "rsvp", name: { uz: "Mehmonlar javoblari sizga Telegramga", ru: "Ответы гостей вам в Telegram" }, price: 0 },
+      { id: "music", name: { uz: "Musiqa va ochilish animatsiyasi", ru: "Музыка и анимация открытия" }, price: 0 },
+      { id: "map", name: { uz: "Xarita va zalgacha yo'nalish", ru: "Карта и маршрут до зала" }, price: 0 },
     ],
   },
   shop: {
